@@ -14,14 +14,17 @@
 
 ## 本地运行
 
-在 WSL2 终端进入项目目录：
+将仓库克隆到自己选择的目录，然后进入项目文件夹：
 
 ```bash
-cd /home/aya/projects/Sakura-Dt.github.io
-python3 -m http.server 8000 --bind 0.0.0.0
+git clone https://github.com/Sakura-Dt/Sakura-Dt.github.io.git
+cd Sakura-Dt.github.io
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-然后在 Windows 浏览器打开 [本地预览](http://localhost:8000)。按 `Ctrl+C` 停止。端口被占用时可以改用 `8080`，并同步修改浏览器地址。开发服务器仅用于本地预览。
+以上命令适用于 Linux、macOS 或 WSL2。已克隆仓库时，直接在自己的项目目录运行最后一条命令即可。
+
+然后在浏览器打开 [本地预览](http://localhost:8000)。按 `Ctrl+C` 停止。端口被占用时可以改用 `8080`，并同步修改浏览器地址。开发服务器仅用于本地预览。
 
 这个项目也能在 Windows 原生环境中运行：进入实际项目目录后，若已安装 Python，可用 `py -m http.server 8000 --bind 127.0.0.1` 启动。
 
