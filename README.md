@@ -1,67 +1,100 @@
-# 个人作品集 · Portfolio
+# Sakura · 个人作品集
 
-原生 HTML、CSS、JavaScript 实现的静态个人作品集。无需 npm 依赖，无后端、数据库或付费 API，可部署到 GitHub Pages。
+深圳大学计算机专业学生 Sakura 的第一个 Web 项目。使用原生 HTML、CSS 和 JavaScript 开发，记录项目实践和学习过程。
 
-## 在 WSL2 中运行
+- 在线网站：[Sakura 的作品集](https://Sakura-Dt.github.io/)
+- 源码仓库：[Sakura-Dt.github.io](https://github.com/Sakura-Dt/Sakura-Dt.github.io)
+- 无框架、构建步骤、后端、数据库、外部字体或付费 API。
 
-在终端执行：
+## 项目状态
+
+作品集第一版已于 2026-10-26 发布。学生信息管理系统、文件自动整理助手是尚未实现的练习计划，卡片图片为概念示意，不提供虚构的源码或演示入口。
+
+本地修改只有经过提交、推送和 Pages 发布后才会出现在网站上。检查 Git 状态和发布结果，可以区分本地进度与线上版本。
+
+## 本地运行
+
+在 WSL2 终端进入项目目录：
 
 ```bash
 cd /home/aya/projects/Sakura-Dt.github.io
 python3 -m http.server 8000 --bind 0.0.0.0
 ```
 
-然后在 Windows 浏览器打开 http://localhost:8000 。按 `Ctrl+C` 停止服务。如果端口被占用，可将 `8000` 改为 `8080`。这个服务器仅用于本地开发。
+然后在 Windows 浏览器打开 [本地预览](http://localhost:8000)。按 `Ctrl+C` 停止。端口被占用时可以改用 `8080`，并同步修改浏览器地址。开发服务器仅用于本地预览。
 
-## 文件结构
+这个项目也能在 Windows 原生环境中运行：进入实际项目目录后，若已安装 Python，可用 `py -m http.server 8000 --bind 127.0.0.1` 启动。
+
+## 文件用途
 
 ```text
-index.html           页面内容、语义结构和项目卡片
+index.html           页面内容、导航、项目卡片、学习时间线和联系信息
 assets/css/style.css 配色、布局、响应式断点和动画
-assets/js/main.js    手机导航、项目筛选、复制邮箱和滚动效果
-assets/favicon.svg   浏览器标签页的小图标
-README.md            运行和修改说明
+assets/js/main.js    手机导航、分类筛选、邮箱复制及滚动淡入
+assets/favicon.svg   浏览器标签页图标
+README.md            运行、维护和验证说明
 ```
 
-## 从哪里开始修改
+## 功能与关键代码
 
-1. 在 `index.html` 中搜索 `TODO`，替换姓名、介绍、学校、邮箱及 GitHub 链接。示例项目和学习阶段均明确标记为占位内容，不代表已完成。
-2. 项目卡片的 `data-category` 对应筛选按钮的 `data-filter`：`systems`、`python`、`web`。`all` 显示全部项目。
-3. 项目地址尚未填写时，卡片使用 `details` 展开说明。准备好真实仓库后，可将整个 `details` 元素换成 `<a href="真实项目地址">查看源码 ↗</a>`。
-4. 替换邮箱时，同时修改页面显示的邮箱、邮件链接的 `href="mailto:..."` 和复制按钮的 `data-email`。
-5. 在 `style.css` 的 `:root` 中统一修改配色和内容宽度。首屏代码只是装饰插图，不会执行 Python。
+- HTML 的 `header`、`nav`、`main`、`section` 和 `footer` 标明内容用途。导航的 `href="#projects"` 对应区域的 `id="projects"`。
+- CSS 的 `:root` 集中定义配色和内容宽度。Grid 安排卡片；媒体查询在平板改成两列、手机改成一列。`clamp()` 控制标题字号。
+- 手机菜单使用定位浮层，展开时不推挤正文；`aria-expanded` 同步菜单状态。Escape、点击菜单外部和焦点离开导航时都能关闭菜单。
+- 分类按钮的 `data-filter` 对应卡片的 `data-category`。脚本用 `hidden` 隐藏不匹配的项目，用 `aria-pressed` 表达选中状态，并播报筛选数量。
+- Clipboard API 复制邮箱，需要 localhost 或 HTTPS 等浏览器允许的环境。复制失败时提供手动复制提示。
+- `IntersectionObserver` 在滚动时显示卡片。键盘焦点进入卡片时立即显示内容；开启“减少动态效果”时关闭动画。关闭 JavaScript 后，正文、导航和原生 `details` 仍能使用。
 
-## 最重要的代码
+## 怎样维护内容
 
-- HTML 的 `header`、`nav`、`main`、`section`、`footer` 说明内容用途；导航的 `href="#projects"` 对应区域的 `id="projects"`。
-- CSS Grid 负责卡片布局；媒体查询在窄屏幕切换成单列。`clamp()` 让标题字号在手机和电脑之间平滑变化。
-- JavaScript 用 `addEventListener` 处理事件，用 `hidden` 控制筛选结果；筛选只改变显示，不删除内容。`aria-pressed` 同步告诉辅助技术哪个选项已选中。
-- `IntersectionObserver` 观察进入视口的内容，触发轻微淡入。无 JavaScript 时内容仍可阅读；系统开启“减少动态效果”时关闭动画。
-- Clipboard API 用于复制邮箱（通常需要 localhost 或 HTTPS）。不支持或失败时显示手动复制提示。
+1. 个人介绍、学校和联系信息在 `index.html`。更换邮箱时同时修改显示文字、`mailto:` 地址和复制按钮的 `data-email`。
+2. 每张项目卡片是一个 `article`。完成计划项目后，更新状态、功能说明和开发记录，再添加真实的源码与预览链接；不要仅改“已完成”标签。
+3. 新项目的分类使用已有 `systems`、`python` 或 `web`。添加新分类时，按钮和卡片的值必须一致。`all` 表示全部。
+4. 项目入口放在 `.project-links` 中，详细说明放在 `details` 中。外部新窗口链接使用 `target="_blank" rel="noopener noreferrer"`。
+5. 学习时间线只填写真实发生的事项。日期用 `<time datetime="2026-10-27">2026.10.27</time>` 表达；当前节点中的 `.current-label` 会自动点亮对应圆点。
+6. 保持本地资源的 `./assets/...` 相对路径；根目录 `index.html` 是 GitHub Pages 入口。首屏的 Python 代码是装饰插图，不会执行。
 
-## 自查清单
+## 开发记录
 
-- 手机约 375px 和电脑约 1440px：无横向溢出，导航可用。
-- 项目筛选四个选项、项目说明展开、复制邮箱、返回顶部正常。
-- 用 Tab 键访问导航与按钮，焦点可见；用 Escape 关闭手机菜单。
-- 关闭 JavaScript 后仍能阅读全部内容并使用导航。
-- 本地 CSS、JS 使用 `./assets/...` 相对路径；没有构建步骤、外部字体或 CDN 依赖。
+- **2026-10-26**：完成第一版、深色响应式布局、手机导航、项目筛选和邮箱复制；创建 Git 提交并首次发布。
+- **2026-10-27**：将作品集转为正式项目，添加源码和预览入口、功能与问题解决记录；把其他两个项目明确标为计划中，补充真实学习时间线及维护文档。
+- **排版经验**：手机菜单曾推挤正文，改用浮层解决；按钮触控高度提升到至少 44px，小屏正文调整为 14px。
+- **交互经验**：淡入动画不能遮住键盘焦点。聚焦时立即显示卡片，同时遵循系统减少动画偏好。
 
-## 发布准备
+## 修改后的检查顺序
 
-本次开发不自动提交或推送。发布前请先替换占位内容、在浏览器中检查，并用 `git diff` 查看改动。入口必须保留为根目录的 `index.html`，便于 GitHub Pages 从仓库根目录提供页面。
+1. 启动本地服务，检查首页、CSS、JavaScript 和图标加载。
+2. 检查 320、375/390、768 和 1440px 宽度：无横向溢出，标题、按钮和项目详情没有重叠。
+3. 打开手机菜单，点击项目锚点；检查菜单关闭后目标标题没有被顶部导航遮挡。
+4. 依次筛选 Web、C / C++、Python 和全部；检查项目数量、详情展开、源码和预览链接。
+5. 检查复制邮箱的成功和失败提示，使用 Tab、Enter 和 Escape 检查键盘操作。
+6. 禁用 JavaScript、开启减少动态效果，再检查内容是否可读。
+7. 用自己的真实手机补充检查字体、触控、横竖屏和邮件应用唤起。浏览器模拟验证不能代替真实设备验证。
+8. 运行 `git diff --check` 并阅读 `git diff`，确认只有本次计划的改动。
 
-`#section` 是页内锚点，`mailto:` 与 `https:` 是对外联系链接；本地资源均为相对路径。
+## 保存版本与发布
 
-## 第一版验证记录
+先查看改动，再暂存本次确实修改的文件：
 
-已使用本机 Edge 和 Playwright 检查：
+```bash
+git status
+git diff
+git add index.html assets/css/style.css README.md
+git diff --cached
+git commit -m "docs: clarify project status and learning milestones"
+```
 
-- 320、375、768、1440px 视口均无横向溢出。
-- 三个分类各显示一个项目，“全部”恢复三个项目。
-- 项目说明展开、邮箱复制、手机菜单打开和 Escape 关闭均正常。
-- 禁用 JavaScript 时导航和所有项目仍可见。
-- 开启减少动态效果后，无等待淡入的隐藏内容；页面未产生 JavaScript 运行错误。
-- 首页、CSS、JavaScript 的 HTTP 请求均返回 200；页内锚点与本地资源路径检查通过。
+上面的文件列表只是本轮示例；以后按实际改动选择，修改脚本时也要暂存对应文件。
 
-这些是当前版本的验证结果，修改后仍应按上面的自查清单重新检查。
+决定发布后执行：
+
+```bash
+git push origin main
+```
+
+仓库已经配置 GitHub Pages。推送后在 [Actions](https://github.com/Sakura-Dt/Sakura-Dt.github.io/actions) 检查对应提交的 Pages 构建是否成功，再检查线上内容。若推送提示登录问题，先完成 GitHub 身份验证，不要修改远程地址或强制推送。
+
+## 下一步
+
+- 用真实手机完成一次体验检查，并记录设备和发现的问题。
+- 选择一个计划项目，从最小功能开始，完成后再更新作品集。
+- 每完成一个独立改动，先验证，再保存 Git 版本。

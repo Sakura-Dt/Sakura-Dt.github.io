@@ -155,6 +155,9 @@ h3 { font-size: 17px; font-weight: 550; }
 .project-body .tags { margin-top: 17px; }
 details { border-top: 1px solid var(--border); margin-top: auto; padding-top: 10px; font-size: 12px; }
 .project-body .tags { margin-bottom: 20px; }
+/* 项目入口保持可见；允许窄屏或较长链接文字自动换行。 */
+.project-links { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.project-links .button { flex: 1 1 110px; min-height: 44px; padding: 8px 12px; font-size: 12px; }
 summary { min-height: 44px; padding-block: 10px; cursor: pointer; color: #cbd5c4; }
 summary span { float: right; color: var(--accent); }
 details p { margin-top: 12px; color: var(--muted); font-size: 14px; }
@@ -167,7 +170,7 @@ details p { margin-top: 12px; color: var(--muted); font-size: 14px; }
 .timeline li { position: relative; padding-bottom: 29px; }
 .timeline li:last-child { padding-bottom: 0; }
 .timeline li::before { position: absolute; content: ""; left: -31px; top: 7px; width: 9px; height: 9px; border-radius: 50%; background: #42543b; border: 2px solid var(--bg); }
-.timeline li:nth-child(2)::before { background: var(--accent); box-shadow: 0 0 0 4px #b8ed9112; }
+.timeline li:has(.current-label)::before { background: var(--accent); box-shadow: 0 0 0 4px #b8ed9112; }
 .timeline-phase { font: 10px ui-monospace, monospace; color: #9eaf91; }
 .timeline h3 { font-size: 16px; margin-top: 8px; }
 .timeline p { font-size: 14px; color: var(--muted); margin-top: 8px; }
