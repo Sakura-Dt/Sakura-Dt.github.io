@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Python 文件整理助手：默认预览、确认后分类移动、不覆盖同名文件。">
+  <title>文件整理助手 · Sakura</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="detail-page">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="header"><div class="container header-inner">
+    <a class="brand" href="./index.html"><span class="brand-mark">s<span>.</span></span><span>SAKURA / PROJECT</span></a>
+    <nav aria-label="项目导航"><a href="./index.html#projects">← 返回项目列表</a></nav>
+  </div></header>
+  <main class="container detail-content" id="main">
+    <p class="eyebrow">02 / PYTHON AUTOMATION</p>
+    <h1>让整理文件，先有预览<span class="accent">.</span></h1>
+    <p class="detail-lead">一个不需要第三方依赖的 Python 命令行工具。先看清文件将去哪里，再决定是否执行。</p>
+    <div class="hero-actions"><a class="button button-primary" href="./tools/file_organizer.py" download>下载 Python 脚本 ↓</a><a class="button button-secondary" href="./tools/README.md">使用说明 →</a></div>
+    <section aria-labelledby="features"><h2 id="features">第一版能做什么</h2><ul><li>按扩展名将第一层文件归入图片、文档、压缩包、媒体或其他目录。</li><li>默认只读预览；指定 <code>--apply</code> 并输入 <code>MOVE</code> 才执行。</li><li>同名文件不覆盖，跳过隐藏文件、子目录和符号链接。</li><li>逐项记录已移动的相对文件名，保存在目标目录的日志中。</li></ul></section>
+    <section aria-labelledby="try"><h2 id="try">在测试目录体验</h2><p>下载脚本，准备一个名为 <code>sample-files</code> 的测试目录，放入几份测试文件。需要 Python 3.12，Windows 可将下面的 <code>python3</code> 换成 <code>py</code>。</p><pre class="usage-code"><code>python3 file_organizer.py ./sample-files
+
+# 检查预览后，再执行并输入 MOVE 确认
+python3 file_organizer.py ./sample-files --apply</code></pre><p>这个工具在自己的电脑上运行，网页不会读取或上传你的文件。</p></section>
+    <section aria-labelledby="engineering"><h2 id="engineering">实现思路</h2><p>用 <code>pathlib</code> 扫描目录，把“生成计划”和“执行计划”分开。执行时重新核对文件是否变化，通过同文件系统的硬链接再删除原路径，避免覆盖已存在目标。测试使用临时目录验证取消、重名、文件变化和链接等情况。</p></section>
+    <section aria-labelledby="limits"><h2 id="limits">边界与后续计划</h2><p>第一版不递归、不提供自动撤销，也不支持不具备硬链接能力的文件系统。执行期间不要同时修改目标目录。中途失败时可能已经移动部分文件，需要核对目录和日志；它不是事务式整理工具。</p><p>后续可根据真实使用反馈增加可验证的恢复流程与自定义分类规则。</p></section>
+    <a class="button button-secondary" href="./index.html#projects">← 返回项目列表</a>
+  </main>
+  <footer class="container footer"><p>Sakura · 用代码记录成长</p><a href="./portfolio.html">阅读作品集开发记录 →</a></footer>
+</body>
+</html>

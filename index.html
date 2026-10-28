@@ -14,7 +14,7 @@
     <a class="skip-link" href="#main">跳到主要内容</a>
     <header class="header">
       <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="个人作品集首页"><span class="brand-mark">s<span>.</span></span><span>SAKURA<span class="brand-light"> / PORTFOLIO</span></span></a>
+        <a class="brand" href="#top"><span class="brand-mark">s<span>.</span></span><span>SAKURA<span class="brand-light"> / PORTFOLIO</span></span></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">菜单 <span aria-hidden="true">☰</span></button>
         <nav id="navigation" aria-label="主导航">
           <a href="#about">关于我</a>
@@ -156,7 +156,7 @@ me.build(<span class="code-green">"something meaningful"</span>)<span class="acc
           </div>
         </div>
         <p id="filter-status" class="sr-only" aria-live="polite"></p>
-        <!-- TODO：计划中的两个练习项目完成后，再更新状态并添加真实仓库链接。 -->
+        <!-- TODO：学生信息管理系统完成后，再更新状态并添加真实仓库链接。 -->
         <div class="projects-grid">
           <article class="project-card reveal" data-category="web">
             <div class="project-preview preview-web" aria-hidden="true">
@@ -185,6 +185,7 @@ me.build(<span class="code-green">"something meaningful"</span>)<span class="acc
                 <span>HTML</span><span>CSS</span><span>JavaScript</span>
               </div>
               <div class="project-links" aria-label="个人作品集网站链接">
+                <a class="button button-secondary" href="./portfolio.html">项目详情 →</a>
                 <a class="button button-primary" href="https://Sakura-Dt.github.io/" target="_blank" rel="noopener noreferrer">在线预览 ↗</a>
                 <a class="button button-secondary" href="https://github.com/Sakura-Dt/Sakura-Dt.github.io" target="_blank" rel="noopener noreferrer">查看源码 ↗</a>
               </div>
@@ -232,20 +233,24 @@ me.build(<span class="code-green">"something meaningful"</span>)<span class="acc
                   <span>▰ images/</span><span>▰ documents/</span><span>▰ others/</span>
                 </div>
               </div>
-              <span class="preview-index">03 / AUTOMATION · 概念示意</span>
+              <span class="preview-index">03 / AUTOMATION</span>
             </div>
             <div class="project-body">
               <div class="project-meta">
-                <span>效率与自动化</span><span>计划中 · 尚未实现</span>
+                <span>效率与自动化</span><span>已实现 · 命令行 v1</span>
               </div>
               <h3>文件自动整理助手</h3>
-              <p>计划用 Python 按文件类型整理目录，先预览分类结果，再逐步实现可确认、可追踪的文件移动。</p>
+              <p>用 Python 扫描并分类文件，默认只预览，确认后移动；不覆盖同名文件，并记录移动结果。</p>
               <div class="tags">
                 <span>Python</span><span>pathlib</span><span>自动化</span>
               </div>
+              <div class="project-links" aria-label="文件整理助手链接">
+                <a class="button button-primary" href="./organizer.html">使用与详情 →</a>
+                <a class="button button-secondary" href="./tools/file_organizer.py" download>下载脚本 ↓</a>
+              </div>
               <details>
-                <summary>查看实践计划 <span>↗</span></summary>
-                <p>此项目尚未实现，上方预览仅为概念示意。第一步计划只读扫描目录并输出分类清单，再处理同名文件和移动记录，使用测试目录验证后再整理真实文件。</p>
+                <summary>功能与实现边界 <span>↗</span></summary>
+                <p>仅扫描目录第一层，跳过隐藏文件与符号链接。已用临时目录测试预览、取消、分类、重名和文件变化情况；不支持递归或自动撤销，中途失败需核对目录及日志。</p>
               </details>
             </div>
           </article>
@@ -274,12 +279,12 @@ me.build(<span class="code-green">"something meaningful"</span>)<span class="acc
               <span class="timeline-phase"><time datetime="2026-10-27">2026.10.27</time> · 继续打磨</span>
               <h3>让作品和成长记录更具体</h3>
               <p>为作品集补充源码入口、在线预览和开发记录，明确计划项目的状态，并继续检查小屏幕下的阅读与操作体验。</p>
-              <span class="current-label"><span class="status-dot"></span> 持续完善</span>
             </li>
             <li class="reveal">
-              <span class="timeline-phase">下一步计划 · 尚未完成</span>
-              <h3>完成一个有明确边界的小工具</h3>
-              <p>从文件整理助手或学生信息管理系统中选择一个，先实现最小功能，再补充异常处理与使用说明，完成后将真实成果加入作品集。</p>
+              <span class="timeline-phase"><time datetime="2026-10-28">2026.10.28</time> · 第二个项目</span>
+              <h3>完成文件整理助手初版</h3>
+              <p>实现只读预览、确认后分类移动、不覆盖重名文件与日志记录，并用临时目录编写回归测试；继续学习功能边界和异常处理。</p>
+              <span class="current-label"><span class="status-dot"></span> 持续完善</span>
             </li>
           </ol>
         </div>

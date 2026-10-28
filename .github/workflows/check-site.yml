@@ -2,7 +2,7 @@ name: Check site
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'codex/**']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -21,6 +21,8 @@ jobs:
           python-version: '3.12'
       - name: Check resources and internal links
         run: python scripts/check_site.py
+      - name: Test Python tools
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

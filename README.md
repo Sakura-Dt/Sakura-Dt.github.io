@@ -9,7 +9,9 @@
 
 ## 项目状态
 
-作品集第一版已于 2026-10-26 发布。学生信息管理系统、文件自动整理助手是尚未实现的练习计划，卡片图片为概念示意，不提供虚构的源码或演示入口。
+作品集第一版已于 2026-10-26 发布。文件整理助手已实现命令行初版，源码和说明位于 `tools/`；学生信息管理系统仍是尚未实现的练习计划，其卡片图片为概念示意。
+
+项目详情：[作品集网站](./portfolio.html)、[文件整理助手](./organizer.html)。开发与测试记录不代表这些本地改动已经发布，线上版本以实际合并、推送结果为准。
 
 本地修改只有经过提交、推送和 Pages 发布后才会出现在网站上。检查 Git 状态和发布结果，可以区分本地进度与线上版本。
 
@@ -42,6 +44,10 @@ tests/site.test.cjs   浏览器回归测试
 package.json         开发测试命令和依赖版本
 package-lock.json    锁定测试依赖，便于重复安装
 .github/workflows/   GitHub Actions 自动检查配置
+portfolio.html       作品集网站的项目详情
+organizer.html       文件整理助手的项目详情
+tools/               Python 工具源码与使用说明
+docs/                开发流程与质量检查记录
 ```
 
 ## 功能与关键代码
@@ -104,6 +110,7 @@ Linux 若提示缺少系统依赖，按 Playwright 提示安装，或使用 `npx
 ```bash
 python3 scripts/check_site.py
 npm test
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 测试会自行启动本地临时服务器、选择空闲端口，并在结束后关闭。它检查手机与电脑布局、触控菜单、锚点遮挡、项目筛选、详情展开、邮箱复制成功和失败反馈，以及无 JavaScript 和减少动画的表现。复制测试使用模拟接口，不读写真实剪贴板。
@@ -112,7 +119,7 @@ Windows 的 Python 命令通常可换成 `py`。如希望复用已安装的 Edge
 
 ### GitHub 上如何运行
 
-`.github/workflows/check-site.yml` 会在推送到 `main`、提交针对 `main` 的拉取请求时执行，也可在 Actions 的 **Check site → Run workflow** 中手动触发。流程依次运行静态检查、安装锁定依赖和浏览器、执行交互测试；失败时查看红色步骤的日志。
+`.github/workflows/check-site.yml` 会在推送到 `main` 或 `codex/` 开发分支、提交针对 `main` 的拉取请求时执行，也可在 Actions 的 **Check site → Run workflow** 中手动触发。流程依次运行静态检查、Python 工具测试、安装锁定依赖和浏览器、执行交互及无障碍测试；失败时查看红色步骤的日志。
 
 此流程只有仓库读取权限，不使用密钥、不推送代码、不修改 Pages 设置。**它目前不会阻止现有 Pages 自动发布**：检查和 Pages 构建相互独立。发布后应同时确认两项都成功；以后若需要检查通过后才发布，再将检查和部署接成顺序流程。
 
@@ -141,5 +148,7 @@ git push origin main
 ## 下一步
 
 - 用真实手机完成一次体验检查，并记录设备和发现的问题。
-- 选择一个计划项目，从最小功能开始，完成后再更新作品集。
+- 使用测试文件体验[文件整理助手](./tools/README.md)，再根据实际需求完善。
 - 每完成一个独立改动，先验证，再保存 Git 版本。
+
+后续开发按[分支开发与发布流程](./docs/development.md)操作；本轮质量检查的范围和结果见[质量记录](./docs/quality.md)。

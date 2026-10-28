@@ -5,6 +5,7 @@ const http = require('node:http');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const { chromium } = require('playwright');
+const { default: AxeBuilder } = require('@axe-core/playwright');
 
 const root = path.resolve(__dirname, '..');
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml' };
@@ -125,4 +126,41 @@ test('禁用 JavaScript 后仍能阅读项目、使用导航和展开详情', as
     await page.locator('.project-card summary').first().click();
     assert.equal(await page.locator('.project-card details').first().getAttribute('open'), '');
   } finally { await page.close(); }
+});
+
+test('三个页面的无障碍扫描、资源预算和详情导航', async () => {
+  const context = await browser.newContext({ reducedMotion: 'reduce' });
+  const page = await context.newPage();
+  try {
+    for (const route of ['/', '/portfolio.html', '/organizer.html']) {
+      await page.goto(baseURL + route, { waitUntil: 'networkidle' });
+      assert.equal(await page.locator('h1').count(), 1);
+      const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
+      assert.deepEqual(results.violations.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target) })), [], route);
+      const budget = await page.evaluate(() => {
+        const resources = performance.getEntriesByType('resource');
+        const navigation = performance.getEntriesByType('navigation')[0];
+        return { bytes: navigation.decodedBodySize + resources.reduce((sum, item) => sum + item.decodedBodySize, 0),
+          external: resources.filter(item => new URL(item.name).origin !== location.origin).map(item => item.name) };
+      });
+      assert.ok(budget.bytes < 150 * 1024, `${route}: 资源体积 ${budget.bytes} 超过 150 KiB`);
+      assert.deepEqual(budget.external, [], '页面不应依赖外部资源');
+      console.log(`${route}: ${budget.bytes} bytes, axe violations: 0`);
+      for (const width of [320, 390, 1440]) {
+        await page.setViewportSize({ width, height: 844 });
+        assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, route);
+      }
+      // Tab 后第一项应是跳转到正文的链接。
+      await page.goto(baseURL + route);
+      await page.keyboard.press('Tab');
+      assert.equal(await page.locator('.skip-link').evaluate(element => element === document.activeElement), true);
+      await page.keyboard.press('Enter');
+      assert.equal(new URL(page.url()).hash, '#main');
+    }
+    await page.goto(baseURL);
+    await page.locator('a[href="./portfolio.html"]').click();
+    assert.equal(new URL(page.url()).pathname, '/portfolio.html');
+    await page.getByRole('link', { name: '返回项目列表', exact: false }).first().click();
+    assert.equal(new URL(page.url()).hash, '#projects');
+  } finally { await context.close(); }
 });
