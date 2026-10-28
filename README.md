@@ -5,6 +5,7 @@
 - 在线网站：[Sakura 的作品集](https://Sakura-Dt.github.io/)
 - 源码仓库：[Sakura-Dt.github.io](https://github.com/Sakura-Dt/Sakura-Dt.github.io)
 - 无框架、构建步骤、后端、数据库、外部字体或付费 API。
+- 自动检查仅用于开发：Python 检查静态文件，Playwright 验证浏览器交互。访问网站无需安装这些工具。
 
 ## 项目状态
 
@@ -36,6 +37,11 @@ assets/css/style.css 配色、布局、响应式断点和动画
 assets/js/main.js    手机导航、分类筛选、邮箱复制及滚动淡入
 assets/favicon.svg   浏览器标签页图标
 README.md            运行、维护和验证说明
+scripts/check_site.py 静态资源、锚点和本机路径检查
+tests/site.test.cjs   浏览器回归测试
+package.json         开发测试命令和依赖版本
+package-lock.json    锁定测试依赖，便于重复安装
+.github/workflows/   GitHub Actions 自动检查配置
 ```
 
 ## 功能与关键代码
@@ -75,6 +81,42 @@ README.md            运行、维护和验证说明
 8. 运行 `git diff --check` 并阅读 `git diff`，确认只有本次计划的改动。
 
 ## 保存版本与发布
+
+### 先运行自动检查
+
+只检查文件和路径时，在仓库根目录执行（需要 Python 3.12）：
+
+```bash
+python3 scripts/check_site.py
+```
+
+它会检查 HTML 的本地资源、页内和跨页锚点、重复 ID、文件名大小写、CSS 的 `url()` 引用，以及公开内容中是否误写了本机用户目录。不联网检测外部网站可用性，也不等同于完整的隐私或安全审计。
+
+运行完整浏览器检查需要 Node.js 22 和 npm。首次安装：
+
+```bash
+npm ci
+npx playwright install chromium
+```
+
+Linux 若提示缺少系统依赖，按 Playwright 提示安装，或使用 `npx playwright install --with-deps chromium`（可能需要管理员权限）。以后检查时运行：
+
+```bash
+python3 scripts/check_site.py
+npm test
+```
+
+测试会自行启动本地临时服务器、选择空闲端口，并在结束后关闭。它检查手机与电脑布局、触控菜单、锚点遮挡、项目筛选、详情展开、邮箱复制成功和失败反馈，以及无 JavaScript 和减少动画的表现。复制测试使用模拟接口，不读写真实剪贴板。
+
+Windows 的 Python 命令通常可换成 `py`。如希望复用已安装的 Edge，可先在 PowerShell 设置 `$env:TEST_BROWSER_CHANNEL="msedge"`，再执行 `npm test`；未设置时使用 Playwright Chromium。
+
+### GitHub 上如何运行
+
+`.github/workflows/check-site.yml` 会在推送到 `main`、提交针对 `main` 的拉取请求时执行，也可在 Actions 的 **Check site → Run workflow** 中手动触发。流程依次运行静态检查、安装锁定依赖和浏览器、执行交互测试；失败时查看红色步骤的日志。
+
+此流程只有仓库读取权限，不使用密钥、不推送代码、不修改 Pages 设置。**它目前不会阻止现有 Pages 自动发布**：检查和 Pages 构建相互独立。发布后应同时确认两项都成功；以后若需要检查通过后才发布，再将检查和部署接成顺序流程。
+
+### 再保存并推送
 
 先查看改动，再暂存本次确实修改的文件：
 
