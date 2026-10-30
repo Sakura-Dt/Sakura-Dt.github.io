@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f1eee6"><meta name="description" content="把真实资料组织成一个可用的网站，再让视觉叙事与阅读共存。"><title>个人网站 · 设计与工程记录 · Sakura</title><link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="./assets/fonts/Archivo-subset.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="./assets/fonts/NotoSansSC-subset.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="./assets/css/style.css"><script src="./assets/js/main.js" defer></script>
+</head>
+<body class="case-page case-portfolio"><a class="skip-link" href="#main">跳到主要内容</a>
+<header class="header"><a class="brand" href="./index.html"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M3 10 22 3 41 10 22 41Z" fill="currentColor"/><path d="m3 10 19 9 19-9M22 19v22" fill="none" stroke="var(--paper)" stroke-width="1.7"/></svg><span>SAKURA<span class="brand-sub">折向 / PERSONAL PRACTICE</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">目录 <span aria-hidden="true">＋</span></button>
+<nav id="navigation" aria-label="主导航"><a href="./index.html#about">01 / 本人</a><a href="./index.html#projects">02 / 作品</a><a href="./index.html#contact">03 / 联系 <span aria-hidden="true">↗</span></a>
+</nav><span class="header-note">FORM IN THE MAKING</span>
+</header>
+<main id="main">
+<div class="case-wrap"><a class="case-back text-link" href="./index.html#projects">← 返回作品索引</a>
+<section class="case-hero"><span class="eyebrow">WEB / CASE 01 / FORM IN THE MAKING</span><h1>一个入口，<br>多种阅读方式。</h1><p>把真实资料组织成一个可用的网站，再让视觉叙事与阅读共存。</p><span class="case-hero-number" aria-hidden="true">01</span>
+</section>
+<section class="case-intro"><span class="eyebrow">CONTEXT / 需求</span><h2>先找到人，再读懂作品。</h2><p>这是我的第一个 Web 项目。访问者需要快速了解我的背景、项目与联系方式；想深入的人，还能继续读需求、实现和边界。原生 HTML、CSS 与 JavaScript 保持静态部署，不需要后端或数据库。</p>
+</section>
+<div class="case-poster" aria-hidden="true"><span>ONE<br>CONTENT.</span>
+<div class="poster-fold">
+</div><small>MANY WAYS TO READ.</small>
+</div>
+<section class="case-grid"><span class="eyebrow">STRUCTURE / 实现</span>
+<div><h2>内容先成立，演出再展开。</h2><p>内容集中在 JSON，页面结构由模板生成根目录 HTML。GitHub Pages 直接提供静态结果；访问者不需要运行构建工具。</p><p>四个核心场景用滚动位置计算折面、文字与视窗状态。桌面采用有限的 sticky 区间，手机缩短停留并重新排列内容。没有滚轮劫持，也没有后台持续运转的动画循环。</p><p>移动导航、项目筛选、邮箱复制和原生详情展开各自独立。关闭 JavaScript 后，项目正文与链接仍然存在；减少动态效果时取消固定区间。</p>
+</div>
+</section>
+<section class="case-grid"><span class="eyebrow">DECISIONS / 取舍</span>
+<div><h2>运动要解释内容。</h2>
+<dl class="case-decisions">
+<div><dt>折面 → 视窗</dt><dd>首屏的折面语言进入项目预览，桌面窗口收窄为手机比例，说明响应式布局。</dd>
+</div>
+<div><dt>演出 → 阅读</dt><dd>关键信息始终可读。折叠详情补充过程，直接入口允许跳过演出。</dd>
+</div>
+<div><dt>重构 → 可恢复</dt><dd>开发前保存既有工作快照，在独立分支验证；发布保留版本历史，便于恢复。</dd>
+</div>
+</dl>
+</div>
+</section>
+<section class="case-grid"><span class="eyebrow">VALIDATION / 检查</span>
+<div><h2>把检查也放进工程。</h2><p>静态检查验证资源、相对路径和锚点；浏览器测试检查响应式、交互、无脚本与减少动态效果。滚动时间轴在相同位置必须给出相同画面，正向和反向一致。</p><p>验收记录随源码保留，说明测试环境、检查范围与已知限制。浏览器模拟不能代替真实手机和人工读屏检查。</p><a class="text-link" href="https://github.com/Sakura-Dt/Sakura-Dt.github.io" target="_blank" rel="noopener noreferrer">查看 GitHub 源码 ↗</a><a class="small-link" href="https://sakura-dt.github.io/" target="_blank" rel="noopener noreferrer">打开网站 ↗</a>
+</div>
+</section>
+<div class="case-end"><a class="text-link" href="./index.html#projects">← 返回作品索引</a><a class="text-link" href="./organizer.html">下一件作品 ↗</a>
+</div>
+</div>
+</main>
+<footer class="case-footer"><a href="./index.html">SAKURA / 折向</a><a href="mailto:{{email}}">{{email}} ↗</a>
+</footer>
+</body>
+</html>
