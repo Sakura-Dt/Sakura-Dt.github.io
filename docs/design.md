@@ -1,3 +1,5 @@
+> 这是上一轮 Swiss 风格的历史记录。当前本地重构请阅读 [视觉参考分析](./visual-reference.md) 和 [动效设计记录](./motion-design.md)。
+
 # Swiss editorial design upgrade
 
 日期：2026-10-29。设计分支：`codex/swiss-editorial-redesign`。原有 `main` 提交是可恢复基线；本次不推送、不部署。

@@ -1,158 +1,78 @@
-# Sakura · 个人作品集
+# Sakura · 折向 / FORM IN THE MAKING
 
-深圳大学计算机专业学生 Sakura 的第一个 Web 项目。使用原生 HTML、CSS 和 JavaScript 开发，记录项目实践和学习过程。
+以「平面经过组织，成为可用结构」为主题的个人网站。纸白、朱红、群青和淡黄组成六场视觉叙事；四段滚动时间轴展示折面、基础结构、响应式视窗与文件整理流程。图形为原创 SVG / CSS；Archivo 与 Noto Sans SC 字体经过子集压缩后保存在本地，不请求外部字体服务，也没有外部图片、动画库或付费服务。
 
-- 在线网站：[Sakura 的作品集](https://Sakura-Dt.github.io/)
-- 源码仓库：[Sakura-Dt.github.io](https://github.com/Sakura-Dt/Sakura-Dt.github.io)
-- 无框架、构建步骤、后端、数据库、外部字体或付费 API。
-- 自动检查仅用于开发：Python 检查静态文件，Playwright 验证浏览器交互。访问网站无需安装这些工具。
+## 本地预览
 
-## 项目状态
-
-作品集第一版已于 2026-10-26 发布。文件整理助手已实现命令行初版，源码和说明位于 `tools/`；学生信息管理系统仍是尚未实现的练习计划，其卡片图片为概念示意。
-
-项目详情：[作品集网站](./portfolio.html)、[文件整理助手](./organizer.html)。开发与测试记录不代表这些本地改动已经发布，线上版本以实际合并、推送结果为准。
-
-本地修改只有经过提交、推送和 Pages 发布后才会出现在网站上。检查 Git 状态和发布结果，可以区分本地进度与线上版本。
-
-## 本地运行
-
-将仓库克隆到自己选择的目录，然后进入项目文件夹：
+需要 Python 3.12。在项目根目录运行：
 
 ```bash
-git clone https://github.com/Sakura-Dt/Sakura-Dt.github.io.git
-cd Sakura-Dt.github.io
+python3 scripts/render_site.py
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-以上命令适用于 Linux、macOS 或 WSL2。已克隆仓库时，直接在自己的项目目录运行最后一条命令即可。
+打开 [本地网站](http://localhost:8000)。Windows 可将 `python3` 换成 `py`。按 Ctrl+C 停止服务。根目录 HTML 已生成，直接预览不需要安装 Node.js 依赖。
 
-然后在浏览器打开 [本地预览](http://localhost:8000)。按 `Ctrl+C` 停止。端口被占用时可以改用 `8080`，并同步修改浏览器地址。开发服务器仅用于本地预览。
+## 页面与真实内容
 
-这个项目也能在 Windows 原生环境中运行：进入实际项目目录后，若已安装 Python，可用 `py -m http.server 8000 --bind 127.0.0.1` 启动。
+- `index.html`：六场完整体验，包含身份、技术状态、两件作品、计划与实践记录、联系方式。
+- `portfolio.html`：网站的需求、内容架构、动效、工程取舍与验证。
+- `organizer.html`：Python 工具的行为、运行方法、实现与限制。
+- `tools/`：保留原文件整理工具和使用说明，不被视觉重构修改。
 
-## 文件用途
+个人网站与 Python 文件整理助手是已实现作品。C++ 学生信息管理仍是计划。后端与 AI Agent 应用是学习方向，未写成已掌握技能或完成作品。网站通过 GitHub Pages 发布，版本历史保存在 GitHub。
 
-```text
-index.html           页面内容、导航、项目卡片、学习时间线和联系信息
-assets/css/style.css 配色、布局、响应式断点和动画
-assets/js/main.js    手机导航、分类筛选、邮箱复制及滚动淡入
-assets/favicon.svg   浏览器标签页图标
-README.md            运行、维护和验证说明
-scripts/check_site.py 静态资源、锚点和本机路径检查
-tests/site.test.cjs   浏览器回归测试
-package.json         开发测试命令和依赖版本
-package-lock.json    锁定测试依赖，便于重复安装
-.github/workflows/   GitHub Actions 自动检查配置
-portfolio.html       作品集网站的项目详情
-organizer.html       文件整理助手的项目详情
-tools/               Python 工具源码与使用说明
-docs/                开发流程与质量检查记录
-```
+## 维护方式
 
-## 功能与关键代码
-
-- HTML 的 `header`、`nav`、`main`、`section` 和 `footer` 标明内容用途。导航的 `href="#projects"` 对应区域的 `id="projects"`。
-- CSS 的 `:root` 集中定义配色和内容宽度。Grid 安排卡片；媒体查询在平板改成两列、手机改成一列。`clamp()` 控制标题字号。
-- 手机菜单使用定位浮层，展开时不推挤正文；`aria-expanded` 同步菜单状态。Escape、点击菜单外部和焦点离开导航时都能关闭菜单。
-- 分类按钮的 `data-filter` 对应卡片的 `data-category`。脚本用 `hidden` 隐藏不匹配的项目，用 `aria-pressed` 表达选中状态，并播报筛选数量。
-- Clipboard API 复制邮箱，需要 localhost 或 HTTPS 等浏览器允许的环境。复制失败时提供手动复制提示。
-- `IntersectionObserver` 在滚动时显示卡片。键盘焦点进入卡片时立即显示内容；开启“减少动态效果”时关闭动画。关闭 JavaScript 后，正文、导航和原生 `details` 仍能使用。
-
-## 怎样维护内容
-
-1. 个人介绍、学校和联系信息在 `index.html`。更换邮箱时同时修改显示文字、`mailto:` 地址和复制按钮的 `data-email`。
-2. 每张项目卡片是一个 `article`。完成计划项目后，更新状态、功能说明和开发记录，再添加真实的源码与预览链接；不要仅改“已完成”标签。
-3. 新项目的分类使用已有 `systems`、`python` 或 `web`。添加新分类时，按钮和卡片的值必须一致。`all` 表示全部。
-4. 项目入口放在 `.project-links` 中，详细说明放在 `details` 中。外部新窗口链接使用 `target="_blank" rel="noopener noreferrer"`。
-5. 学习时间线只填写真实发生的事项。日期用 `<time datetime="2026-10-27">2026.10.27</time>` 表达；当前节点中的 `.current-label` 会自动点亮对应圆点。
-6. 保持本地资源的 `./assets/...` 相对路径；根目录 `index.html` 是 GitHub Pages 入口。首屏使用姓名字标和文字排版，不加载外部字体或图片。
-
-## 开发记录
-
-- **2026-10-26**：完成第一版、深色响应式布局、手机导航、项目筛选和邮箱复制；创建 Git 提交并首次发布。
-- **2026-10-27**：将作品集转为正式项目，添加源码和预览入口、功能与问题解决记录；把其他两个项目明确标为计划中，补充真实学习时间线及维护文档。
-- **排版经验**：手机菜单曾推挤正文，改用浮层解决；按钮触控高度提升到至少 44px，小屏正文调整为 14px。
-- **交互经验**：淡入动画不能遮住键盘焦点。聚焦时立即显示卡片，同时遵循系统减少动画偏好。
-
-## 修改后的检查顺序
-
-1. 启动本地服务，检查首页、CSS、JavaScript 和图标加载。
-2. 检查 320、375/390、768 和 1440px 宽度：无横向溢出，标题、按钮和项目详情没有重叠。
-3. 打开手机菜单，点击项目锚点；检查菜单关闭后目标标题没有被顶部导航遮挡。
-4. 依次筛选 Web、C / C++、Python 和全部；检查项目数量、详情展开、源码和预览链接。
-5. 检查复制邮箱的成功和失败提示，使用 Tab、Enter 和 Escape 检查键盘操作。
-6. 禁用 JavaScript、开启减少动态效果，再检查内容是否可读。
-7. 用自己的真实手机补充检查字体、触控、横竖屏和邮件应用唤起。浏览器模拟验证不能代替真实设备验证。
-8. 运行 `git diff --check` 并阅读 `git diff`，确认只有本次计划的改动。
-
-## 保存版本与发布
-
-### 先运行自动检查
-
-只检查文件和路径时，在仓库根目录执行（需要 Python 3.12）：
+`content/site.json` 存放身份、联系方式及六场主文案；`templates/*.tpl` 存放各页语义结构与详细项目说明。修改后运行生成器，将模板、内容和生成的根目录 HTML 一起提交。
 
 ```bash
+python3 scripts/render_site.py
+python3 scripts/render_site.py --check
 python3 scripts/check_site.py
 ```
 
-它会检查 HTML 的本地资源、页内和跨页锚点、重复 ID、文件名大小写、CSS 的 `url()` 引用，以及公开内容中是否误写了本机用户目录。不联网检测外部网站可用性，也不等同于完整的隐私或安全审计。
+共享排版与详情页：`assets/css/style.css`。六场构图与响应式：`assets/css/home.css`。时间轴、导航、筛选、步骤按钮和复制：`assets/js/main.js`。
 
-运行完整浏览器检查需要 Node.js 22 和 npm。首次安装：
+滚动动画不接管滚轮。图形以约75ms的短跟随吸收滚轮跳动，各元素使用错开的局部阶段，停止后精确落定且不再持续排帧。桌面有限 sticky 区间，手机取消整场固定并采用独立图形布局。系统减少动态效果或站内开关提供静态阅读。无 JavaScript 时全部真实内容、链接、导航和原生详情仍可用。每次修改场景高度或布局后，重新验证实际固定位置与正反向状态。
+
+## 自动检查
+
+首次安装浏览器测试依赖：
 
 ```bash
 npm ci
 npx playwright install chromium
 ```
 
-Linux 若提示缺少系统依赖，按 Playwright 提示安装，或使用 `npx playwright install --with-deps chromium`（可能需要管理员权限）。以后检查时运行：
+执行：
 
 ```bash
+python3 scripts/render_site.py --check
 python3 scripts/check_site.py
-npm test
 python3 -m unittest discover -s tests -p 'test_*.py' -v
+npm test
 ```
 
-测试会自行启动本地临时服务器、选择空闲端口，并在结束后关闭。它检查手机与电脑布局、触控菜单、锚点遮挡、项目筛选、详情展开、邮箱复制成功和失败反馈，以及无 JavaScript 和减少动画的表现。复制测试使用模拟接口，不读写真实剪贴板。
+浏览器测试自行启动和关闭临时静态服务。覆盖三页在 320 / 390 / 768 / 1440 宽度的溢出、导航与筛选、详情、复制成功与失败、四场五阶段正反向实际变换、无脚本/减少动态效果、WCAG 自动扫描与256 KiB完整加载预算（含字体）。
 
-Windows 的 Python 命令通常可换成 `py`。如希望复用已安装的 Edge，可先在 PowerShell 设置 `$env:TEST_BROWSER_CHANNEL="msedge"`，再执行 `npm test`；未设置时使用 Playwright Chromium。
+测试可复用已安装的 Edge。Linux/macOS 运行 `TEST_BROWSER_CHANNEL=msedge npm test`；Windows PowerShell 先设置 `$env:TEST_BROWSER_CHANNEL="msedge"` 再运行 `npm test`。这是浏览器配置，不是网站运行要求。
 
-### GitHub 上如何运行
+CI 保留 `.github/workflows/check-site.yml`：生成检查、静态检查、工具测试、浏览器检查。没有加入新部署流程。
 
-`.github/workflows/check-site.yml` 会在推送到 `main` 或 `codex/` 开发分支、提交针对 `main` 的拉取请求时执行，也可在 Actions 的 **Check site → Run workflow** 中手动触发。流程依次运行静态检查、Python 工具测试、安装锁定依赖和浏览器、执行交互及无障碍测试；失败时查看红色步骤的日志。
+## 设计与交付文档
 
-此流程只有仓库读取权限，不使用密钥、不推送代码、不修改 Pages 设置。**它目前不会阻止现有 Pages 自动发布**：检查和 Pages 构建相互独立。发布后应同时确认两项都成功；以后若需要检查通过后才发布，再将检查和部署接成顺序流程。
+- [本轮审计、三方向与最终艺术指导](./docs/rebuild/art-direction.md)
+- [亲见参考画面与证据边界](./docs/rebuild/reference-evidence.md)
+- [六场五阶段分镜与全新文案](./docs/rebuild/storyboard-copy.md)
+- [实际浏览器检查、改进与已知限制](./docs/rebuild/qa.md)
 
-### 再保存并推送
+旧 `docs/` 研究与交付记录仍保留，作为历史资料；本轮规范以 `docs/rebuild/` 为准。
 
-先查看改动，再暂存本次确实修改的文件：
+## 恢复与发布
 
-```bash
-git status
-git diff
-git add index.html assets/css/style.css README.md
-git diff --cached
-git commit -m "docs: clarify project status and learning milestones"
-```
+本轮开始前的全部未提交工作已保存为提交 **7ed2fde**，恢复分支 **codex/recovery-before-new-identity**。新实现位于 **codex/fieldwork-rebuild**；后续字体与动效修正位于 **codex/type-motion-refinement**。切换恢复分支前，先保存新分支的工作，避免丢失后续改动。
 
-上面的文件列表只是本轮示例；以后按实际改动选择，修改脚本时也要暂存对应文件。
+网站继续兼容 GitHub Pages：根目录 index.html、两个详情页及相对资源路径，无服务器路由和运行构建依赖。发布前运行检查并审阅分支，远程检查通过后再合入 main。发布完成后核实 Pages 状态与线上实际内容。
 
-决定发布后执行：
-
-```bash
-git push origin main
-```
-
-仓库已经配置 GitHub Pages。推送后在 [Actions](https://github.com/Sakura-Dt/Sakura-Dt.github.io/actions) 检查对应提交的 Pages 构建是否成功，再检查线上内容。若推送提示登录问题，先完成 GitHub 身份验证，不要修改远程地址或强制推送。
-
-## 下一步
-
-- 用真实手机完成一次体验检查，并记录设备和发现的问题。
-- 使用测试文件体验[文件整理助手](./tools/README.md)，再根据实际需求完善。
-- 每完成一个独立改动，先验证，再保存 Git 版本。
-
-后续开发按[分支开发与发布流程](./docs/development.md)操作；本轮质量检查的范围和结果见[质量记录](./docs/quality.md)。
-
-## 视觉系统
-
-当前本地设计升级采用暖白、墨黑与瑞士红，使用系统无衬线字体、细分隔线、不对称网格和编辑式项目列表。首页采用分栏身份首屏、双作品展示、整合式个人档案和深色联系区域；计划项目单独降级呈现。背景与技能整合，学习记录通过原生 details 展开。首页专属布局位于 assets/css/home.css，详情页继续复用 style.css。详情页与首页共享样式，原有导航、筛选、复制和下载功能保留。设计与两轮视觉检查记录见 [设计记录](./docs/design.md)。
+字体来源、许可与增加中文内容后的子集更新方法见 [本地字体说明](./assets/fonts/README.md)。字体与动效本轮修正记录见 [修正说明](./docs/rebuild/type-motion-refinement.md)。

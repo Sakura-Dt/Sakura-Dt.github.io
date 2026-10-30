@@ -1,0 +1,22 @@
+{
+  "copy": {
+    "name": "Sakura",
+    "school": "深圳大学 · 计算机专业 · 大二",
+    "email": "2538423610@qq.com",
+    "github": "https://github.com/Sakura-Dt",
+    "meta_title": "Sakura · 折向 / FORM IN THE MAKING",
+    "meta_description": "Sakura，深圳大学计算机专业大二学生。两个真实项目，以及软件工程、后端开发与 AI Agent 应用的学习现场。",
+    "hero_title": "把问题，<br>折成形。",
+    "hero_body": "从一段程序，到一个可以使用的作品。<br>这里展示我的开发实践，也说明尚未完成的部分。",
+    "about_title": "先有基础，<br>再有结构。",
+    "about_body": "我是 Sakura，深圳大学计算机专业大二学生。C、C++、Python 是我的编程基础；软件工程是正在学习的组织方法。比起列出更多技术名词，我想先把一个需求做完整。",
+    "web_title": "一个网页，<br>多种尺度。",
+    "web_body": "我的个人网站，也是第一个 Web 项目。用 HTML、CSS 和 JavaScript 组织真实资料，让同一份内容在桌面与手机上都能被找到、被阅读、被操作。",
+    "python_title": "文件动身前，<br>去向先落定。",
+    "python_body": "一个本地运行的 Python 文件整理助手。先生成分类计划，确认后再移动；已有目标不覆盖，完成的移动逐项留痕。",
+    "next_title": "未完成，<br>有去向。",
+    "next_body": "已实现的作品展示结果。还在学习的方向，写明边界与下一步。",
+    "contact_title": "下一折，<br>从对话开始。",
+    "contact_body": "一个具体的问题，一次实现思路的交换。<br>如果你也在做软件，欢迎来信。"
+  }
+}
