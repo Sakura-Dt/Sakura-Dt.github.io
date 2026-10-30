@@ -1,0 +1,121 @@
+/* Homepage composition. Shared controls and detail-page typography stay in style.css. */
+.home-page .header-inner { min-height:88px; }
+.home-page .brand { font-size:26px; font-weight:700; letter-spacing:-1px; gap:8px; }
+.home-page nav { gap:40px; }
+.home-page nav a { font-size:15px; }
+.home-page .hero { display:grid; grid-template-columns:1.55fr 1fr; padding-top:48px; gap:0; }
+.hero-heading { padding:28px 48px 42px 0; }
+.home-page .hero h1 { font-size:clamp(56px,7.2vw,104px); line-height:1.16; letter-spacing:-.055em; margin:36px 0 30px; font-weight:650; }
+.hero-intro { font-size:20px; color:var(--muted); line-height:1.8; }
+.identity { background:var(--accent); color:#fff; padding:36px; display:flex; flex-direction:column; }
+.identity-top { font-size:13px; letter-spacing:.08em; }
+.identity-name { display:flex; justify-content:space-between; gap:24px; margin-top:20px; font-size:clamp(36px,4.5vw,64px); font-weight:600; letter-spacing:-2px; line-height:1.3; }
+.identity-name span { font-weight:400; }
+.identity-school { margin-top:28px; font-size:18px; }
+.identity-bottom { margin-top:auto; padding-top:48px; }
+.identity-bottom p { font-size:16px; }
+.identity-bottom a { display:inline-flex; min-height:44px; align-items:center; margin-top:24px; border-bottom:1px solid #ffffff80; font-size:14px; }
+.hero-under { grid-column:1/-1; display:flex; justify-content:space-between; gap:24px; align-items:center; padding:30px 0; border-bottom:1px solid var(--text); }
+.hero-under p { color:var(--muted); font-size:16px; }
+.hero-jump { display:flex; gap:60px; align-items:center; font-size:18px; }
+.hero-jump span { font-size:40px; }
+.work-section { padding-block:88px; }
+.work-heading { display:flex; justify-content:space-between; gap:48px; align-items:flex-end; margin-bottom:40px; }
+.work-heading h2 { font-size:clamp(30px,3.3vw,46px); line-height:1.4; }
+.work-heading>p { color:var(--muted); font-size:16px; }
+.work-count { font-size:13px; color:var(--muted); }
+.home-page .projects-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:56px 40px; padding-top:24px; }
+.home-page .project-card { display:flex; flex-direction:column; gap:0; padding:0; border:0; min-width:0; }
+.home-page .project-preview { flex-direction:column; align-items:flex-start; padding:28px; min-height:330px; justify-content:space-between; }
+.cover-label,.cover-caption { font-size:12px; letter-spacing:.05em; line-height:1.8; }
+.project-preview strong { font-size:clamp(44px,5.5vw,80px); letter-spacing:-.065em; line-height:1.08; font-weight:600; }
+.cover-web { background:#20211f; color:var(--bg); }
+.cover-web strong span { color:#f47960; }
+.cover-python { background:#dfded5; color:var(--text); }
+.cover-python strong span { color:var(--accent); }
+.home-page .project-body { padding-top:22px; }
+.home-page .project-body h3 { font-size:28px; }
+.home-page .project-body>p { max-width:none; }
+.home-page .project-meta { font-size:13px; }
+.home-page .project-links { gap:8px; }
+.home-page .project-links .button { flex:1 1 auto; font-size:14px; }
+.home-page .project-card[data-category=systems] { grid-column:1/-1; display:grid; grid-template-columns:1fr 3fr; gap:36px; border-top:1px solid var(--line); padding-top:28px; }
+.home-page .project-card[data-category=systems] .project-preview { min-height:0; padding:0; }
+.home-page .project-card[data-category=systems] .project-body { padding:0; }
+.home-page .project-card[data-category=systems] h3 { font-size:24px; }
+.profile-section { background:#e8e6de; padding-block:80px; }
+.profile-grid { display:grid; grid-template-columns:1.15fr 1fr; gap:100px; }
+.profile-intro h2 { font-size:clamp(30px,3.1vw,44px); line-height:1.4; margin-bottom:28px; }
+.profile-intro>p:not(.eyebrow) { font-size:17px; color:var(--muted); margin-top:20px; }
+.profile-facts { display:grid; grid-template-columns:auto 1fr; gap:14px 24px; margin-top:32px; padding-top:24px; border-top:1px solid #b7b4a9; font-size:14px; }
+.profile-facts span { color:var(--muted); }
+.profile-facts strong { font-weight:500; }
+.profile-tools>h3 { display:flex; justify-content:space-between; gap:16px; margin:0; font-size:21px; font-weight:600; }
+.profile-tools>h3 span { font-size:12px; font-weight:400; color:var(--muted); align-self:center; }
+.tool-row { display:grid; grid-template-columns:1fr auto; border-top:1px solid #b7b4a9; margin-top:24px; padding-top:18px; gap:8px; }
+.tool-row h4 { margin:0; font-size:23px; font-weight:600; }
+.tool-row>span { font-size:13px; color:var(--muted); align-self:center; }
+.tool-row p { grid-column:1/-1; font-size:16px; color:var(--muted); }
+.learning-notes { margin-top:32px; }
+.learning-notes>details { border-top-color:#b7b4a9; }
+.learning-notes summary { font-size:16px; }
+.learning-notes summary span { font-size:13px; }
+.home-page .contact-section { width:100%; background:#20211f; color:var(--bg); border:0; padding-block:64px 40px; }
+.home-page .contact-section .eyebrow { color:#f59a85; }
+.contact-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-top:24px; }
+.contact-heading h2 { font-size:clamp(36px,5vw,68px); line-height:1.3; margin:0; }
+.contact-heading>span { font-size:100px; line-height:1; color:#f59a85; }
+.contact-bottom { display:grid; grid-template-columns:1fr 1fr; gap:60px; border-top:1px solid #717168; margin-top:48px; padding-top:28px; }
+.contact-bottom>p { color:#c5c3b8; font-size:17px; }
+.home-page .contact-actions { padding:0; }
+.home-page .contact-email { font-size:clamp(20px,2.5vw,32px); border-bottom-color:#717168; }
+.home-page .contact-email span { color:#f59a85; }
+.home-page .contact-links a:hover,.home-page .contact-links button:hover { color:#f59a85; }
+.home-page .copy-status { color:#d5d3c8; font-size:14px; }
+.home-page .footer { border:0; }
+@media(hover:hover) { .home-page .project-card:hover .project-preview strong { transform:translateX(6px); } }
+.project-preview strong { transition:transform .25s; }
+@media(max-width:1000px) {
+ .home-page .hero { grid-template-columns:1.4fr 1fr; }
+ .hero-heading { padding-right:28px; }
+ .identity { padding:24px; }
+ .profile-grid { gap:48px; }
+ .home-page .project-preview { min-height:280px; }
+}
+@media(max-width:760px) {
+ .home-page .header-inner { min-height:70px; }
+ .home-page .hero { grid-template-columns:1fr; padding-top:24px; }
+ .hero-heading { padding:8px 0 32px; }
+ .home-page .hero h1 { font-size:clamp(48px,12.8vw,76px); margin:24px 0; }
+ .hero-intro { font-size:17px; }
+ .identity { padding:24px; }
+ .identity-name { font-size:44px; margin-top:10px; }
+ .identity-school { margin-top:18px; font-size:16px; }
+ .identity-bottom { padding-top:24px; display:flex; align-items:flex-end; justify-content:space-between; gap:12px; }
+ .identity-bottom p { font-size:14px; }
+ .identity-bottom a { margin:0; font-size:13px; white-space:nowrap; }
+ .hero-under { align-items:flex-start; padding-block:24px; }
+ .hero-under p { font-size:14px; max-width:15em; }
+ .hero-jump { font-size:14px; gap:12px; white-space:nowrap; }
+ .hero-jump span { font-size:24px; }
+ .work-section { padding-block:48px; }
+ .work-heading { display:block; margin-bottom:24px; }
+ .work-heading h2 { font-size:30px; }
+ .work-heading>p { margin-top:20px; font-size:15px; }
+ .home-page .projects-grid { grid-template-columns:1fr; gap:40px; }
+ .home-page .project-preview { min-height:290px; padding:24px; }
+ .project-preview strong { font-size:64px; }
+ .home-page .project-body h3 { font-size:27px; }
+ .home-page .project-card[data-category=systems] { display:block; }
+ .home-page .project-card[data-category=systems] .project-preview { margin-bottom:16px; }
+ .profile-section { padding-block:48px; }
+ .profile-grid { grid-template-columns:1fr; gap:48px; }
+ .profile-intro h2 { font-size:30px; }
+ .profile-facts { gap:12px 18px; font-size:13px; }
+ .home-page .contact-section { padding-block:48px 24px; }
+ .contact-heading h2 { font-size:34px; }
+ .contact-heading>span { font-size:48px; }
+ .contact-bottom { grid-template-columns:1fr; gap:24px; margin-top:32px; }
+ .contact-bottom>p { font-size:16px; }
+ .home-page .contact-email { font-size:23px; }
+}

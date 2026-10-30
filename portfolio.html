@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3f1eb">
   <meta name="description" content="个人作品集网站的需求、技术实现、问题解决和验证记录。">
   <title>个人作品集网站 · Sakura</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
@@ -20,7 +21,7 @@
     <p class="detail-lead">一个用原生 HTML、CSS 和 JavaScript 构建的个人作品集，也是我学习 Web 开发、版本管理与静态发布的起点。</p>
     <div class="hero-actions"><a class="button button-primary" href="./index.html">体验网站 →</a><a class="button button-secondary" href="https://github.com/Sakura-Dt/Sakura-Dt.github.io" target="_blank" rel="noopener noreferrer">查看源码 ↗</a></div>
     <section aria-labelledby="goals"><h2 id="goals">需求与边界</h2><p>让访问者了解个人背景、技能、项目和学习经历。兼顾手机与电脑，不使用框架、后端、数据库或付费 API，根目录 HTML 可以直接部署到 GitHub Pages。</p></section>
-    <section aria-labelledby="implementation"><h2 id="implementation">怎样实现</h2><ul><li>语义化 HTML 描述内容；页内锚点连接五个主要区域。</li><li>CSS 变量统一配色，Grid 与媒体查询调整不同屏幕下的布局。</li><li>JavaScript 处理手机导航、项目分类和邮箱复制；无脚本时仍保留正文与导航。</li><li>首屏插图用 HTML 和 CSS 绘制，不请求外部图片与字体；详情页无需 JavaScript。</li></ul></section>
+    <section aria-labelledby="implementation"><h2 id="implementation">怎样实现</h2><ul><li>语义化 HTML 描述内容；页内锚点连接作品、个人档案与联系区域。</li><li>CSS 变量统一配色，Grid 与媒体查询调整不同屏幕下的布局。</li><li>JavaScript 处理手机导航、项目分类和邮箱复制；无脚本时仍保留正文与导航。</li><li>首屏以大字号排版表达身份，不请求外部图片与字体；详情页无需 JavaScript。</li></ul></section>
     <section aria-labelledby="solutions"><h2 id="solutions">问题与解决</h2><h3>手机菜单推挤正文</h3><p>将菜单改成依附导航栏的浮层，展开时首屏保持原位。按钮触控高度至少 44px，点击跳转、Escape 和焦点离开均可关闭。</p><h3>淡入效果遮住键盘焦点</h3><p>默认让内容可见，只为支持动画的浏览器添加增强。卡片获得焦点时立即显示，并尊重系统“减少动态效果”设置。</p><h3>说明文档依赖开发电脑路径</h3><p>运行步骤使用克隆命令和相对目录；自动检查扫描公开页面、资源及主 README，避免再次写入本机用户目录。</p></section>
     <section aria-labelledby="verification"><h2 id="verification">验证与下一步</h2><p>静态检查验证本地资源、锚点与大小写；浏览器测试覆盖手机菜单、筛选、详情、复制反馈和降级表现。无障碍扫描和资源体积预算作为回归检查，不代表所有设备上的体验都已验证。</p><p>下一步继续积累真实项目，依据实际手机反馈迭代，并在需要时将检查与发布串联。</p></section>
     <a class="button button-secondary" href="./index.html#projects">← 返回项目列表</a>

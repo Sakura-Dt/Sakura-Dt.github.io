@@ -4,177 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sakura 的个人作品集。深圳大学计算机专业学生，拥有 C、C++ 与 Python 基础，正在探索 Web 开发，用项目记录学习与成长。">
-    <meta name="theme-color" content="#101312">
+    <meta name="theme-color" content="#f3f1eb">
     <title>Sakura · 个人作品集</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
     <script src="./assets/js/main.js" defer></script>
   </head>
-  <body id="top">
+  <body id="top" class="home-page">
     <a class="skip-link" href="#main">跳到主要内容</a>
-    <header class="header">
-      <div class="container header-inner">
-        <a class="brand" href="#top"><span class="brand-mark">s<span>.</span></span><span>SAKURA<span class="brand-light"> / PORTFOLIO</span></span></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">菜单 <span aria-hidden="true">☰</span></button>
-        <nav id="navigation" aria-label="主导航">
-          <a href="#about">关于我</a>
-          <a href="#skills">技能栈</a>
-          <a href="#projects">项目</a>
-          <a href="#journey">学习经历</a>
-          <a class="nav-contact" href="#contact">联系我 ↗</a>
-        </nav>
-      </div>
-    </header>
+    <header class="header"><div class="container header-inner">
+      <a class="brand" href="#top">Sakura<span class="accent"> /</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation">菜单 <span aria-hidden="true">☰</span></button>
+      <nav id="navigation" aria-label="主导航"><a href="#projects">作品</a><a href="#about">个人档案</a><a href="#contact">联系 ↗</a></nav>
+    </div></header>
     <main id="main">
       <section class="hero container" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> HELLO, WORLD. <span class="eyebrow-muted">/ 持续学习，持续构建</span></p>
-          <h1 id="hero-title">你好，我是<span class="name">Sakura<span class="accent">.</span></span></h1>
-          <p class="hero-role">计算机专业学生 <span>/</span> 未来的软件工程师</p>
-          <p class="hero-description">在深圳大学学习计算机，用代码探索想法。<br>从 C、C++ 与 Python 出发，正在走进 Web 开发，<br>把课堂所学，慢慢变成可以运行的作品。</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">探索我的项目 ↗</a>
-            <a class="button button-secondary" href="#contact">聊聊新想法 →</a>
-          </div>
-          <div class="hero-note">
-            <span aria-hidden="true">+</span> 保持好奇，享受从 0 到 1 的过程。
-          </div>
-        </div>
-        <div class="hero-art" role="img" aria-label="将好奇心转化为作品的代码插图">
-          <div class="orbit orbit-one">
-          </div>
-          <div class="orbit orbit-two">
-          </div>
-          <span class="art-coordinate">FIG. 01 — THE BUILDER</span>
-          <div class="code-window">
-            <div class="window-bar">
-              <i></i><i></i><i></i><small>hello_world.py</small><span>PYTHON</span>
-            </div>
-            <pre><code><span class="code-comment"># Small steps. Real progress.</span>
-<span class="code-purple">class</span> <span class="code-yellow">Developer</span>:
-    name = <span class="code-green">"Sakura"</span>
-    languages = [<span class="code-green">"C"</span>, <span class="code-green">"C++"</span>, <span class="code-green">"Python"</span>]
-    curiosity = <span class="code-purple">True</span>
-
-    <span class="code-purple">def</span> <span class="code-yellow">build</span>(self, idea):
-        <span class="code-purple">return</span> learn() + practice()
-
-<span class="code-comment"># The next chapter starts here.</span>
-me = Developer()
-me.build(<span class="code-green">"something meaningful"</span>)<span class="accent">▌</span></code></pre>
-            <div class="window-footer">
-              <span>● learning in progress</span><span>UTF-8</span>
-            </div>
-          </div>
-          <div class="art-tag">
-            ⌘ &nbsp; THINK. CODE. REPEAT.
-          </div>
-          <span class="art-bottom">IDEAS → CODE → REALITY</span>
-        </div>
-        <a class="scroll-cue" href="#about"><span>↓</span> 向下探索 <i></i> SCROLL TO DISCOVER</a>
+        <div class="hero-heading"><p class="eyebrow">COMPUTER SCIENCE / WORK IN PROGRESS</p><h1 id="hero-title">把想法，<br>写成现实<span class="accent">。</span></h1><p class="hero-intro">从一行代码，到一个完整项目。<br>用实践理解技术，让好奇心有迹可循。</p></div>
+        <aside class="identity" aria-label="个人简介"><span class="identity-top">HELLO, I'M</span><p class="identity-name">Sakura<span>↗</span></p><p class="identity-school">深圳大学<br>计算机专业 · 在校学生</p><div class="identity-bottom"><p>正在探索 Web 开发，<br>持续构建自己的作品。</p><a href="#about">更多关于我 ↓</a></div></aside>
+        <div class="hero-under"><p>已有 C、C++ 与 Python 基础。<br>这里记录我的项目、方法，以及正在学习的事。</p><a class="hero-jump" href="#projects">查看作品 <span aria-hidden="true">↘</span></a></div>
       </section>
-      <section class="section container" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">01 / ABOUT ME</p>
-            <h2 id="about-title">代码之外，也是我<span class="accent">.</span></h2>
-          </div>
-          <span class="section-aside">A LITTLE INTRODUCTION</span>
-        </div>
-        <div class="about-layout reveal">
-          <div class="about-text">
-            <p class="lead">保持好奇，认真理解，<br>让每一个小想法都有机会成为作品。</p>
-            <p>我是 Sakura，深圳大学的计算机专业学生。目前有 C、C++ 和 Python 基础，正在从编程练习走向完整的项目开发。这个作品集是我的 Web 开发起点，也会记录一路上的尝试与收获。</p>
-            <p>我希望学会的不只是让程序运行起来，还包括把代码写清楚、把问题想明白，以及一步步改善使用体验。从一个页面、一个功能开始，在实践中建立自己的工程能力。</p>
-          </div>
-          <div class="about-facts">
-            <div>
-              <span>当前身份</span><strong>计算机专业 · 在校学生</strong>
-            </div>
-            <div>
-              <span>所在学校</span><strong>深圳大学</strong>
-            </div>
-            <div>
-              <span>探索方向</span><strong>软件开发 / Web 开发</strong>
-            </div>
-            <div>
-              <span>最近在做</span><strong><span class="status-dot"></span> 构建第一个个人网站</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section container" id="skills" aria-labelledby="skills-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">02 / MY TOOLKIT</p>
-            <h2 id="skills-title">把基础变成创造力<span class="accent">.</span></h2>
-          </div>
-          <p class="section-description">已有基础，也有新的探索。<br>每一个工具，都在实践中逐渐熟悉。</p>
-        </div>
-        <div class="skills-grid">
-          <article class="skill-card reveal">
-            <span class="skill-icon">C<span>++</span></span><span class="pill">已有基础</span>
-            <h3>C / C++</h3>
-            <p>从程序逻辑出发，理解内存、数据结构与面向对象编程。</p>
-            <div class="tags">
-              <span>程序设计</span><span>基础算法</span><span>面向对象</span>
-            </div>
-          </article>
-          <article class="skill-card reveal">
-            <span class="skill-icon python-icon">Py<span>_</span></span><span class="pill">已有基础</span>
-            <h3>Python</h3>
-            <p>用简洁的代码实现想法，探索脚本编写与日常任务自动化。</p>
-            <div class="tags">
-              <span>脚本开发</span><span>文件处理</span><span>自动化探索</span>
-            </div>
-          </article>
-          <article class="skill-card reveal">
-            <span class="skill-icon">&lt;<span>/</span>&gt;</span><span class="pill pill-accent">正在学习</span>
-            <h3>Web & 工程工具</h3>
-            <p>从页面结构到交互效果，学习用版本管理组织一个完整项目。</p>
-            <div class="tags">
-              <span>HTML / CSS / JS</span><span>Git</span><span>GitHub Pages</span>
-            </div>
-          </article>
-        </div>
-      </section>
-      <section class="section container" id="projects" aria-labelledby="projects-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">03 / SELECTED PROJECTS</p>
-            <h2 id="projects-title">在实践中，留下作品<span class="accent">.</span></h2>
-          </div>
-          <span class="section-aside">FROM LEARNING TO BUILDING</span>
-        </div>
-        <div class="project-toolbar">
-          <p>从第一个上线作品开始，记录已经完成的实践与下一步计划。</p>
-          <div class="filters" role="group" aria-label="按技术筛选项目">
-            <button type="button" data-filter="all" aria-pressed="true">全部</button>
-            <button type="button" data-filter="systems" aria-pressed="false">C / C++</button>
-            <button type="button" data-filter="python" aria-pressed="false">Python</button>
-            <button type="button" data-filter="web" aria-pressed="false">Web</button>
-          </div>
-        </div>
-        <p id="filter-status" class="sr-only" aria-live="polite"></p>
-        <!-- TODO：学生信息管理系统完成后，再更新状态并添加真实仓库链接。 -->
-        <div class="projects-grid">
-          <article class="project-card reveal" data-category="web">
-            <div class="project-preview preview-web" aria-hidden="true">
-              <div class="website-mini">
-                <div class="mini-nav">
-                  s. <span>about　work　contact</span>
-                </div>
-                <div class="mini-content">
-                  <div>
-                    <small>HELLO, WORLD.</small><strong>Build.<br>Learn. Repeat<span>.</span></strong><i></i>
-                  </div>
-                  <div class="mini-shape">
-                    &lt;/&gt;
-                  </div>
-                </div>
-              </div>
-              <span class="preview-index">01 / WEB EXPERIENCE</span>
-            </div>
+      <section class="container work-section" id="projects" aria-labelledby="projects-title">
+        <div class="work-heading"><div><p class="eyebrow">THE WORK</p><h2 id="projects-title">两个作品，<br>一段正在展开的实践。</h2></div><p>已完成的项目与下一步探索。<br>从需求到实现，再到验证与迭代。</p></div>
+        <div class="project-toolbar"><span class="work-count">02 已实现 / 01 计划中</span><div class="filters" role="group" aria-label="按技术筛选项目"><button type="button" data-filter="all" aria-pressed="true">全部</button><button type="button" data-filter="web" aria-pressed="false">Web</button><button type="button" data-filter="python" aria-pressed="false">Python</button><button type="button" data-filter="systems" aria-pressed="false">C / C++</button></div></div>
+        <p id="filter-status" class="sr-only" aria-live="polite"></p><div class="projects-grid"><article class="project-card reveal" data-category="web">
+            <div class="project-preview cover-web" aria-hidden="true"><span class="cover-label">PERSONAL WEBSITE / 01</span><strong>Sakura<span>.</span></strong><span class="cover-caption">A FIRST STEP INTO THE WEB.<br>HTML · CSS · JAVASCRIPT</span></div>
             <div class="project-body">
               <div class="project-meta">
                 <span>界面与交互</span><span>已上线 · v1</span>
@@ -197,44 +51,8 @@ me.build(<span class="code-green">"something meaningful"</span>)<span class="acc
               </details>
             </div>
           </article>
-          <article class="project-card reveal" data-category="systems">
-            <div class="project-preview preview-system" aria-hidden="true">
-              <div class="terminal-mini">
-                <div class="mini-title">
-                  terminal <span>● ● ●</span>
-                </div>
-                <p><span>➜</span> ./student_manager</p>
-                <p class="terminal-muted">[1] 添加学生　[2] 查询信息</p>
-                <p class="terminal-muted">[3] 修改记录　[4] 保存退出</p>
-                <p><span>›</span> 把逻辑，写进每一次操作 _</p>
-              </div>
-              <span class="preview-index">02 / SYSTEMS · 概念示意</span>
-            </div>
-            <div class="project-body">
-              <div class="project-meta">
-                <span>命令行工具</span><span>计划中 · 尚未实现</span>
-              </div>
-              <h3>学生信息管理系统</h3>
-              <p>计划用 C++ 实现学生信息的添加、查询与保存，练习数据组织、输入校验和文件读写。</p>
-              <div class="tags">
-                <span>C++</span><span>文件读写</span><span>数据结构</span>
-              </div>
-              <details>
-                <summary>查看实践计划 <span>↗</span></summary>
-                <p>此项目尚未实现，上方预览仅为概念示意。第一步计划完成添加和查询，再实现文件保存，最后检查重复学号、无效输入和空文件等情况。</p>
-              </details>
-            </div>
-          </article>
-          <article class="project-card reveal" data-category="python">
-            <div class="project-preview preview-python" aria-hidden="true">
-              <div class="file-illustration">
-                <span class="file-stack">.jpg<br>.pdf<br>.txt</span><span class="file-arrow">→</span>
-                <div class="folder-stack">
-                  <span>▰ images/</span><span>▰ documents/</span><span>▰ others/</span>
-                </div>
-              </div>
-              <span class="preview-index">03 / AUTOMATION</span>
-            </div>
+<article class="project-card reveal" data-category="python">
+            <div class="project-preview cover-python" aria-hidden="true"><span class="cover-label">PYTHON UTILITY / 02</span><strong>files <span>→</span><br>folders</strong><span class="cover-caption">SCAN. REVIEW. ORGANIZE.<br>file_organizer.py</span></div>
             <div class="project-body">
               <div class="project-meta">
                 <span>效率与自动化</span><span>已实现 · 命令行 v1</span>
@@ -254,17 +72,27 @@ me.build(<span class="code-green">"something meaningful"</span>)<span class="acc
               </details>
             </div>
           </article>
-        </div>
+<article class="project-card reveal" data-category="systems">
+            <div class="project-preview cover-systems" aria-hidden="true"><span class="cover-label">NEXT UP / 03</span></div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span>命令行工具</span><span>计划中 · 尚未实现</span>
+              </div>
+              <h3>学生信息管理系统</h3>
+              <p>计划用 C++ 实现学生信息的添加、查询与保存，练习数据组织、输入校验和文件读写。</p>
+              <div class="tags">
+                <span>C++</span><span>文件读写</span><span>数据结构</span>
+              </div>
+              <details>
+                <summary>查看实践计划 <span>↗</span></summary>
+                <p>此项目尚未实现。第一步计划完成添加和查询，再实现文件保存，最后检查重复学号、无效输入和空文件等情况。</p>
+              </details>
+            </div>
+          </article></div>
       </section>
-      <section class="section container" id="journey" aria-labelledby="journey-title">
-        <div class="journey-layout">
-          <div>
-            <p class="eyebrow">04 / LEARNING JOURNEY</p>
-            <h2 id="journey-title">成长，有迹可循<span class="accent">.</span></h2>
-            <p class="journey-intro">不急于一次掌握所有，<br>把每一次理解，都变成下一步的基础。</p>
-            <p class="placeholder-note">从实际项目出发，记录已经走过的每一步。</p>
-          </div>
-          <ol class="timeline">
+      <section class="profile-section" id="about" aria-labelledby="about-title"><div class="container profile-grid">
+        <div class="profile-intro"><p class="eyebrow">THE PERSON BEHIND THE CODE</p><h2 id="about-title">保持好奇。<br>也认真把事情做完。</h2><p>我是 Sakura，深圳大学的计算机专业学生。目前有 C、C++ 和 Python 基础，正在从编程练习走向完整的项目开发。</p><p>我希望学会的不只是让程序运行起来，还包括把代码写清楚、把问题想明白，以及一步步改善使用体验。这个网站记录尝试，也记录成长。</p><div class="profile-facts"><span>教育背景</span><strong>深圳大学 · 计算机专业</strong><span>探索方向</span><strong>软件开发 / Web 开发</strong><span>最近在做</span><strong>打磨作品集与 Python 工具</strong></div></div>
+        <div class="profile-tools" id="skills"><h3>当前的工具箱 <span>TOOLKIT</span></h3><div class="tool-row"><h4>C / C++</h4><span>已有基础</span><p>程序设计、基础算法、数据结构与面向对象。</p></div><div class="tool-row"><h4>Python</h4><span>已有基础</span><p>脚本编写、文件处理与日常任务自动化。</p></div><div class="tool-row"><h4>Web & Git</h4><span>正在学习</span><p>HTML、CSS、JavaScript、Git 版本管理与 GitHub Pages。</p></div><div class="learning-notes" id="journey"><details><summary>学习与项目记录 <span>展开 ↓</span></summary><ol class="timeline">
             <li class="reveal">
               <span class="timeline-phase">基础积累 · 项目开始前</span>
               <h3>从 C、C++ 与 Python 出发</h3>
@@ -286,31 +114,10 @@ me.build(<span class="code-green">"something meaningful"</span>)<span class="acc
               <p>实现只读预览、确认后分类移动、不覆盖重名文件与日志记录，并用临时目录编写回归测试；继续学习功能边界和异常处理。</p>
               <span class="current-label"><span class="status-dot"></span> 持续完善</span>
             </li>
-          </ol>
-        </div>
-      </section>
-      <section class="container contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-panel reveal">
-          <div>
-            <p class="eyebrow">05 / LET’S CONNECT</p>
-            <h2 id="contact-title">下一个想法，从交流开始<span class="accent">.</span></h2>
-            <p>欢迎交流学习心得、项目想法，或只是打个招呼。</p>
-          </div>
-          <div class="contact-actions">
-            <a class="contact-email" href="mailto:2538423610@qq.com">2538423610@qq.com <span>↗</span></a>
-            <div class="contact-links">
-              <button type="button" id="copy-email" data-email="2538423610@qq.com">复制邮箱 ⧉</button>
-              <a href="https://github.com/Sakura-Dt" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            </div>
-            <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
-          </div>
-        </div>
-      </section>
+          </ol></details></div></div>
+      </div></section>
+      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container"><p class="eyebrow">LET'S TALK</p><div class="contact-heading"><h2 id="contact-title">下一个想法，<br>从打个招呼开始。</h2><span aria-hidden="true">↗</span></div><div class="contact-bottom"><p>欢迎交流学习心得、项目想法，<br>或聊聊你正在构建的东西。</p><div class="contact-actions"><a class="contact-email" href="mailto:2538423610@qq.com">2538423610@qq.com <span>↗</span></a><div class="contact-links"><button type="button" id="copy-email" data-email="2538423610@qq.com">复制邮箱 ⧉</button><a href="https://github.com/Sakura-Dt" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div></div></div></section>
     </main>
-    <footer class="container footer">
-      <a class="brand footer-brand" href="#top"><span class="brand-mark">s<span>.</span></span><span>保持好奇，继续构建。</span></a>
-      <p>© <span id="year">2026</span> Sakura · 用代码记录成长</p>
-      <a class="back-top" href="#top">回到顶部 ↑</a>
-    </footer>
+    <footer class="container footer"><span>Sakura / Personal portfolio</span><p>© <span id="year">2026</span> Sakura · 用代码记录成长</p><a class="back-top" href="#top">回到顶部 ↑</a></footer>
   </body>
 </html>

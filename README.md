@@ -66,7 +66,7 @@ docs/                开发流程与质量检查记录
 3. 新项目的分类使用已有 `systems`、`python` 或 `web`。添加新分类时，按钮和卡片的值必须一致。`all` 表示全部。
 4. 项目入口放在 `.project-links` 中，详细说明放在 `details` 中。外部新窗口链接使用 `target="_blank" rel="noopener noreferrer"`。
 5. 学习时间线只填写真实发生的事项。日期用 `<time datetime="2026-10-27">2026.10.27</time>` 表达；当前节点中的 `.current-label` 会自动点亮对应圆点。
-6. 保持本地资源的 `./assets/...` 相对路径；根目录 `index.html` 是 GitHub Pages 入口。首屏的 Python 代码是装饰插图，不会执行。
+6. 保持本地资源的 `./assets/...` 相对路径；根目录 `index.html` 是 GitHub Pages 入口。首屏使用姓名字标和文字排版，不加载外部字体或图片。
 
 ## 开发记录
 
@@ -152,3 +152,7 @@ git push origin main
 - 每完成一个独立改动，先验证，再保存 Git 版本。
 
 后续开发按[分支开发与发布流程](./docs/development.md)操作；本轮质量检查的范围和结果见[质量记录](./docs/quality.md)。
+
+## 视觉系统
+
+当前本地设计升级采用暖白、墨黑与瑞士红，使用系统无衬线字体、细分隔线、不对称网格和编辑式项目列表。首页采用分栏身份首屏、双作品展示、整合式个人档案和深色联系区域；计划项目单独降级呈现。背景与技能整合，学习记录通过原生 details 展开。首页专属布局位于 assets/css/home.css，详情页继续复用 style.css。详情页与首页共享样式，原有导航、筛选、复制和下载功能保留。设计与两轮视觉检查记录见 [设计记录](./docs/design.md)。
