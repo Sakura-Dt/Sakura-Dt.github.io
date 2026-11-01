@@ -1,0 +1,197 @@
+{
+  "description": "Actual tool execution on synthetic example files. Classification uses suffix only; contents are placeholders.",
+  "rules": {
+    "images": [
+      ".gif",
+      ".jpeg",
+      ".jpg",
+      ".png",
+      ".svg",
+      ".webp"
+    ],
+    "documents": [
+      ".csv",
+      ".doc",
+      ".docx",
+      ".md",
+      ".pdf",
+      ".txt",
+      ".xlsx"
+    ],
+    "archives": [
+      ".7z",
+      ".gz",
+      ".tar",
+      ".zip"
+    ],
+    "media": [
+      ".mov",
+      ".mp3",
+      ".mp4",
+      ".wav"
+    ]
+  },
+  "plan": [
+    {
+      "name": "backup.7z",
+      "category": "archives",
+      "to": "archives/backup.7z",
+      "action": "move"
+    },
+    {
+      "name": "brief.pdf",
+      "category": "documents",
+      "to": "documents/brief.pdf",
+      "action": "move"
+    },
+    {
+      "name": "cover.png",
+      "category": "images",
+      "to": "images/cover.png",
+      "action": "move"
+    },
+    {
+      "name": "data.bin",
+      "category": "others",
+      "to": "others/data.bin",
+      "action": "move"
+    },
+    {
+      "name": "demo.mp4",
+      "category": "media",
+      "to": "media/demo.mp4",
+      "action": "move"
+    },
+    {
+      "name": "mark.svg",
+      "category": "images",
+      "to": "images/mark.svg",
+      "action": "move"
+    },
+    {
+      "name": "notes.txt",
+      "category": "documents",
+      "to": "documents/notes.txt",
+      "action": "skip"
+    },
+    {
+      "name": "photo.JPG",
+      "category": "images",
+      "to": "images/photo.JPG",
+      "action": "move"
+    },
+    {
+      "name": "readme.md",
+      "category": "documents",
+      "to": "documents/readme.md",
+      "action": "move"
+    },
+    {
+      "name": "release.zip",
+      "category": "archives",
+      "to": "archives/release.zip",
+      "action": "move"
+    },
+    {
+      "name": "script.py",
+      "category": "others",
+      "to": "others/script.py",
+      "action": "move"
+    },
+    {
+      "name": "table.csv",
+      "category": "documents",
+      "to": "documents/table.csv",
+      "action": "move"
+    },
+    {
+      "name": "theme.mp3",
+      "category": "media",
+      "to": "media/theme.mp3",
+      "action": "move"
+    }
+  ],
+  "preview_stdout": "待移动 | backup.7z -> archives/backup.7z\n待移动 | brief.pdf -> documents/brief.pdf\n待移动 | cover.png -> images/cover.png\n待移动 | data.bin -> others/data.bin\n待移动 | demo.mp4 -> media/demo.mp4\n待移动 | mark.svg -> images/mark.svg\n跳过：目标已存在或不可用 | notes.txt -> documents/notes.txt\n待移动 | photo.JPG -> images/photo.JPG\n待移动 | readme.md -> documents/readme.md\n待移动 | release.zip -> archives/release.zip\n待移动 | script.py -> others/script.py\n待移动 | table.csv -> documents/table.csv\n待移动 | theme.mp3 -> media/theme.mp3\n预览：12 个待移动，1 个跳过。\n未修改文件。\n",
+  "apply_stdout": "待移动 | backup.7z -> archives/backup.7z\n待移动 | brief.pdf -> documents/brief.pdf\n待移动 | cover.png -> images/cover.png\n待移动 | data.bin -> others/data.bin\n待移动 | demo.mp4 -> media/demo.mp4\n待移动 | mark.svg -> images/mark.svg\n跳过：目标已存在或不可用 | notes.txt -> documents/notes.txt\n待移动 | photo.JPG -> images/photo.JPG\n待移动 | readme.md -> documents/readme.md\n待移动 | release.zip -> archives/release.zip\n待移动 | script.py -> others/script.py\n待移动 | table.csv -> documents/table.csv\n待移动 | theme.mp3 -> media/theme.mp3\n预览：12 个待移动，1 个跳过。\n确认后将移动上述文件。输入 MOVE 继续：已移动：backup.7z -> archives/backup.7z\n已移动：brief.pdf -> documents/brief.pdf\n已移动：cover.png -> images/cover.png\n已移动：data.bin -> others/data.bin\n已移动：demo.mp4 -> media/demo.mp4\n已移动：mark.svg -> images/mark.svg\n已移动：photo.JPG -> images/photo.JPG\n已移动：readme.md -> documents/readme.md\n已移动：release.zip -> archives/release.zip\n已移动：script.py -> others/script.py\n已移动：table.csv -> documents/table.csv\n已移动：theme.mp3 -> media/theme.mp3\n完成：移动 12 个，跳过 1 个。日志：.organizer-log.jsonl\n",
+  "logs": [
+    {
+      "time": "2026-10-31T04:39:29.151086+00:00",
+      "from": "backup.7z",
+      "to": "archives/backup.7z"
+    },
+    {
+      "time": "2026-10-31T04:39:29.151270+00:00",
+      "from": "brief.pdf",
+      "to": "documents/brief.pdf"
+    },
+    {
+      "time": "2026-10-31T04:39:29.151893+00:00",
+      "from": "cover.png",
+      "to": "images/cover.png"
+    },
+    {
+      "time": "2026-10-31T04:39:29.152449+00:00",
+      "from": "data.bin",
+      "to": "others/data.bin"
+    },
+    {
+      "time": "2026-10-31T04:39:29.152988+00:00",
+      "from": "demo.mp4",
+      "to": "media/demo.mp4"
+    },
+    {
+      "time": "2026-10-31T04:39:29.153105+00:00",
+      "from": "mark.svg",
+      "to": "images/mark.svg"
+    },
+    {
+      "time": "2026-10-31T04:39:29.153171+00:00",
+      "from": "photo.JPG",
+      "to": "images/photo.JPG"
+    },
+    {
+      "time": "2026-10-31T04:39:29.153225+00:00",
+      "from": "readme.md",
+      "to": "documents/readme.md"
+    },
+    {
+      "time": "2026-10-31T04:39:29.153276+00:00",
+      "from": "release.zip",
+      "to": "archives/release.zip"
+    },
+    {
+      "time": "2026-10-31T04:39:29.153327+00:00",
+      "from": "script.py",
+      "to": "others/script.py"
+    },
+    {
+      "time": "2026-10-31T04:39:29.153374+00:00",
+      "from": "table.csv",
+      "to": "documents/table.csv"
+    },
+    {
+      "time": "2026-10-31T04:39:29.153425+00:00",
+      "from": "theme.mp3",
+      "to": "media/theme.mp3"
+    }
+  ],
+  "result_tree": [
+    ".organizer-log.jsonl",
+    "archives/backup.7z",
+    "archives/release.zip",
+    "documents/brief.pdf",
+    "documents/notes.txt",
+    "documents/readme.md",
+    "documents/table.csv",
+    "images/cover.png",
+    "images/mark.svg",
+    "images/photo.JPG",
+    "media/demo.mp4",
+    "media/theme.mp3",
+    "notes.txt",
+    "others/data.bin",
+    "others/script.py"
+  ],
+  "moved": 12,
+  "skipped": 1
+}

@@ -1,0 +1,29 @@
+{
+  "baseline": "75b3efc",
+  "checks": {
+    "assets/js/intro.js": {
+      "geometry_function_unchanged": true
+    },
+    "assets/js/order.js": {
+      "geometry_function_unchanged": true
+    },
+    "assets/js/dimensions.js": {
+      "geometry_function_unchanged": true
+    },
+    "assets/js/finale.js": {
+      "geometry_function_unchanged": true
+    },
+    "assets/css/intro.css": {
+      "scroll_travel_unchanged": true
+    },
+    "assets/css/order.css": {
+      "scroll_travel_unchanged": true
+    },
+    "assets/css/dimensions.css": {
+      "scroll_travel_unchanged": true
+    },
+    "assets/css/finale.css": {
+      "scroll_travel_unchanged": true
+    }
+  }
+}
