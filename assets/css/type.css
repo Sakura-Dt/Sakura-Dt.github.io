@@ -14,6 +14,7 @@ p{max-width:36em}
 .brand-sub{font-size:10px;letter-spacing:.02em}.header-note{font-size:10px;letter-spacing:.06em}
 .text-link,.small-link,.solid-link,.case-back,.filters button{font-size:var(--type-small)}
 .case-footer{font-size:var(--type-small)}
+.hero-copy{width:calc(var(--type-display) * 3.86)}
 .hero-copy h1{font-size:var(--type-display);line-height:1.18;letter-spacing:-.035em}
 .hero-greeting{font-size:20px;letter-spacing:0}
 .hero-info{font-size:15px}.hero-info>p:first-child{font-size:17px}
