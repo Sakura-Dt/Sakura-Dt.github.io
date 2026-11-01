@@ -1,0 +1,20 @@
+{
+  "baseline": "60344db",
+  "unchanged": {
+    "assets/css/intro.css": true,
+    "assets/js/intro.js": true,
+    "assets/css/order.css": true,
+    "assets/js/order.js": true,
+    "assets/css/dimensions.css": true,
+    "assets/js/dimensions.js": true,
+    "assets/css/style.css": true,
+    "templates/portfolio.tpl": true,
+    "portfolio.html": true,
+    "organizer.html": true,
+    "templates/organizer.tpl": true,
+    "tools/file_organizer.py": true,
+    "assets/previews/site-view.html": true,
+    "assets/previews/layouts.json": true,
+    "prior three chapters body": true
+  }
+}

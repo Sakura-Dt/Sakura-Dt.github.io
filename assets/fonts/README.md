@@ -7,12 +7,15 @@ Two self-hosted variable WOFF2 files provide consistent glyphs without runtime e
 
 Both are under SIL Open Font License 1.1. Complete licenses, including upstream copyright statements, are retained alongside the fonts. These are subsets, not original unmodified binaries; the OFL Reserved Font Name `Source` is not used as a modified family name. No font assets from game PVs are used.
 
-The Latin font includes common Latin characters and interface arrows. The CJK subset includes current page characters and interface feedback. Missing characters fall back to the operating system font, so future text remains readable. Rebuild the subset when adding Chinese copy to keep appearance consistent. `coverage.txt` records the included CJK characters.
+The Latin font includes common Latin characters and interface arrows. The shared CJK subset covers the current source copy in `content/site.json`, including motion labels and feedback. The previous stage-specific CJK supplements have been consolidated into this file, so all pages use the same glyphs and weights. No runtime font service is used.
 
-Optional rebuild (not needed to preview or deploy): obtain the two upstream TTF files above as `Archivo.ttf` and `NotoSansSC.ttf`, install `fonttools[woff]` in a development environment, generate the HTML, then run:
+Regenerate HTML before rebuilding fonts:
 
 ```
+python scripts/render_site.py
 python scripts/subset_fonts.py /path/to/official-font-directory
 ```
 
-Review the reported source hashes, regenerated fonts and coverage before committing. The web runtime remains buildless. Font payload is approximately 155 KiB for both families combined; the browser test's complete-page budget is 256 KiB, including font requests.
+The optional font tool requires `fonttools[woff]` and the official Archivo.ttf and NotoSansSC.ttf files from the sources above. Review the printed source hashes and generated coverage. The website itself needs no font build or installed dependencies. `coverage.txt` records included CJK characters.
+
+Stage 05 retains the same font sources and 400–700 weight range. The CJK subset is about 115 KiB, with a 43 KiB Latin subset. The complete-page browser budget remains 320 KiB of decoded resources.

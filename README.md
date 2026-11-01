@@ -32,9 +32,9 @@ python3 scripts/render_site.py --check
 python3 scripts/check_site.py
 ```
 
-共享排版与详情页：`assets/css/style.css`。六场构图与响应式：`assets/css/home.css`。时间轴、导航、筛选、步骤按钮和复制：`assets/js/main.js`。
+共享排版与详情页：`assets/css/style.css` 与 `assets/css/type.css`。主要场景分别由 `intro`、`order`、`dimensions`、`finale` 的 CSS/JS 管理。`assets/js/motion.js` 统一时间轴和生命周期，`assets/css/integration.css` 管理章节衔接与适配；`assets/js/main.js` 管理导航、筛选和复制等界面行为。
 
-滚动动画不接管滚轮。图形以约75ms的短跟随吸收滚轮跳动，各元素使用错开的局部阶段，停止后精确落定且不再持续排帧。桌面有限 sticky 区间，手机取消整场固定并采用独立图形布局。系统减少动态效果或站内开关提供静态阅读。无 JavaScript 时全部真实内容、链接、导航和原生详情仍可用。每次修改场景高度或布局后，重新验证实际固定位置与正反向状态。
+滚动动画不接管滚轮。图形使用桌面62ms、手机48ms的指数跟随吸收滚轮跳动，各元素使用错开的局部阶段，停止后精确落定且不再持续排帧。桌面采用有限 sticky 区间。手机保留开场和收尾的固定演出，Python与Web项目使用独立步骤浏览。系统减少动态效果或站内开关提供静态阅读。无 JavaScript 时全部真实内容、链接、导航和原生详情仍可用。每次修改场景高度或布局后，重新验证实际固定位置与正反向状态。
 
 ## 自动检查
 
@@ -54,7 +54,7 @@ python3 -m unittest discover -s tests -p 'test_*.py' -v
 npm test
 ```
 
-浏览器测试自行启动和关闭临时静态服务。覆盖三页在 320 / 390 / 768 / 1440 宽度的溢出、导航与筛选、详情、复制成功与失败、四场五阶段正反向实际变换、无脚本/减少动态效果、WCAG 自动扫描与256 KiB完整加载预算（含字体）。
+浏览器测试自行启动和关闭临时静态服务。覆盖三页在 320 / 390 / 768 / 1440 宽度的溢出、导航与筛选、详情、复制成功与失败、四场五阶段正反向实际变换、无脚本/减少动态效果、WCAG 自动扫描与320 KiB完整加载预算（含字体）。
 
 测试可复用已安装的 Edge。Linux/macOS 运行 `TEST_BROWSER_CHANNEL=msedge npm test`；Windows PowerShell 先设置 `$env:TEST_BROWSER_CHANNEL="msedge"` 再运行 `npm test`。这是浏览器配置，不是网站运行要求。
 
@@ -67,11 +67,11 @@ CI 保留 `.github/workflows/check-site.yml`：生成检查、静态检查、工
 - [六场五阶段分镜与全新文案](./docs/rebuild/storyboard-copy.md)
 - [实际浏览器检查、改进与已知限制](./docs/rebuild/qa.md)
 
-旧 `docs/` 研究与交付记录仍保留，作为历史资料；本轮规范以 `docs/rebuild/` 为准。
+各阶段研究与交付记录保留为历史资料。当前版本以 [最终视觉审查](./docs/stage07/final-review.md)、[全站运动系统](./docs/stage06/motion-system.md) 和 [文案排版系统](./docs/stage05/typography-system.md) 为准。
 
 ## 恢复与发布
 
-本轮开始前的全部未提交工作已保存为提交 **7ed2fde**，恢复分支 **codex/recovery-before-new-identity**。新实现位于 **codex/fieldwork-rebuild**；后续字体与动效修正位于 **codex/type-motion-refinement**。切换恢复分支前，先保存新分支的工作，避免丢失后续改动。
+本轮开始前的全部未提交工作已保存为提交 **7ed2fde**，恢复分支 **codex/recovery-before-new-identity**。前七阶段及最终验收版本已保存为 **de543dc**，位于 **codex/final-art-review**；发布前状态保留在该提交。切换恢复分支前，先保存新分支的工作，避免丢失后续改动。
 
 网站继续兼容 GitHub Pages：根目录 index.html、两个详情页及相对资源路径，无服务器路由和运行构建依赖。发布前运行检查并审阅分支，远程检查通过后再合入 main。发布完成后核实 Pages 状态与线上实际内容。
 

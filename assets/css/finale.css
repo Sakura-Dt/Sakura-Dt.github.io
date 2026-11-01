@@ -1,0 +1,101 @@
+
+/* 04 — the six faces open into directions, then collect beside a letter. */
+.finale{font-family:'Archivo','Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif;--finale-travel:1720px;position:relative;background:var(--paper);color:var(--ink);isolation:isolate}
+.finale-stage{position:relative;padding:0 var(--gutter);overflow:hidden;border-top:1px solid var(--line)}
+.finale-meta{position:relative;z-index:2;display:flex;justify-content:space-between;gap:20px;padding:23px 0;font-size:10px;letter-spacing:.07em;border-bottom:1px solid var(--line)}
+.finale-meta>span:last-child{letter-spacing:0}
+.finale-sheet{display:none;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.finale-faces path{fill:var(--blue)}
+.finale-faces path:nth-child(2){fill:#1e31ac}
+.finale-faces path:nth-child(4){fill:#4255dc}
+.finale-faces path:nth-child(6){fill:var(--red)}
+.finale-seams{fill:none;stroke:var(--blue);stroke-width:1;opacity:.38}
+.finale-point{fill:var(--red)}
+.next{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:10%;padding:64px 0 130px;min-height:780px}
+.next-heading{align-self:start}
+.next-heading>.eyebrow{font-size:11px;letter-spacing:.06em;font-weight:400}
+.next h2{font-size:clamp(54px,5.8vw,90px);line-height:1.19;letter-spacing:-.045em;margin:22px 0}
+.next-heading>p{font-size:14px;line-height:1.9;max-width:350px}
+.next-directions{padding-top:0}
+.direction{display:grid;grid-template-columns:42px 1fr;gap:16px;border-top:1px solid var(--blue);padding:22px 0 24px}
+.direction-number{font-size:12px;color:var(--blue);padding-top:1px}
+.direction-status{display:block;font-size:11px;letter-spacing:.02em;color:var(--blue);margin-bottom:11px}
+.direction h3{font-size:25px;font-weight:550;letter-spacing:-.035em;margin-bottom:12px}
+.direction p{font-size:13px;line-height:1.85;max-width:395px}
+.learning-record{border-top:1px solid var(--line);font-size:11px}
+.learning-record summary{display:flex;align-items:center;justify-content:space-between;min-height:46px;gap:18px}
+.learning-record summary span{font-size:20px;color:var(--blue)}
+.learning-record[open] summary span{transform:rotate(45deg)}
+.learning-record>p{font-size:12px;line-height:1.9;padding:12px 0 20px;max-width:430px}
+.next-figure-label{position:absolute;left:0;bottom:50px;font-size:10px;color:var(--blue)}
+.next-figure-label i{font-family:var(--display);display:block;font-size:26px;font-style:normal;margin-top:7px}
+.finale-bridge{display:none}
+.contact{position:relative;z-index:1;padding:76px 0 48px;border-top:1px solid var(--line)}
+.contact-heading h2{font-size:clamp(50px,6.3vw,96px);letter-spacing:-.045em;line-height:1.18;margin-top:24px}
+.contact-note{font-size:14px;line-height:1.9;margin:26px 0 45px}
+.contact-links{max-width:100%}
+.contact-mail{border-top:1px solid var(--blue);border-bottom:1px solid var(--blue);display:flex;align-items:center;justify-content:space-between;gap:25px;padding:18px 0}
+.contact-mail>a{font-family:var(--display);font-size:clamp(26px,4.8vw,75px);letter-spacing:-.055em;line-height:1.3;min-height:48px;display:flex;align-items:center;gap:30px}
+.contact-mail>a>span{color:var(--red);font-size:.6em}
+.contact-mail button{font-size:11px;white-space:nowrap;min-height:44px;padding:0 10px}
+.contact-mail button>span{margin-left:22px;font-size:18px;color:var(--blue)}
+#copy-status{font-size:11px;min-height:25px;padding-top:6px}
+.contact-github{display:flex;align-items:center;justify-content:space-between;gap:30px;min-height:48px;border-bottom:1px solid var(--line);font-size:14px;max-width:350px}
+.contact-github>span:last-child{color:var(--blue);font-size:23px}
+.contact-signature{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-top:62px}
+.contact-signature strong{font-family:var(--display);font-size:clamp(44px,6vw,88px);font-weight:600;font-stretch:75%;line-height:1;letter-spacing:-.065em}
+.contact-signature strong>span{display:block;font-size:9px;font-stretch:100%;font-weight:400;letter-spacing:.09em;margin-top:14px}
+.contact-signature p{font-size:11px;line-height:1.9}
+.finale-footer{position:relative;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--line);font-size:10px;min-height:64px}
+.finale-footer nav{display:flex;gap:28px}
+.finale-footer a{display:flex;align-items:center;min-height:44px}
+.finale-anchor{position:absolute;top:calc(100% - 720px);height:1px;width:1px;pointer-events:none}
+/* JS enables a single shared plane; both compositions remain normal reading flow otherwise. */
+.finale.is-animated{height:calc(100svh - var(--header) + var(--finale-travel))}
+.is-animated .finale-sheet{display:block}
+.is-animated .finale-pin{position:sticky;top:var(--header)}
+.is-animated .finale-stage{height:calc(100svh - var(--header));min-height:0}
+.is-animated .finale-meta{position:absolute;left:var(--gutter);right:var(--gutter);top:0}
+.is-animated .next{position:absolute;inset:0;display:block;padding:0;min-height:0}
+.is-animated .next-heading{position:absolute;left:var(--gutter);top:16%;width:40%;transform-origin:left top}
+.is-animated .next-directions{position:absolute;left:55%;right:var(--gutter);top:17%}
+.is-animated .direction{padding:18px 0 20px}
+.is-animated .next-figure-label{left:var(--gutter);bottom:10%}
+.is-animated .finale-bridge{position:absolute;display:block;left:var(--gutter);top:31%;font-size:clamp(50px,6.8vw,106px);line-height:1.19;letter-spacing:-.045em;font-weight:550;z-index:1}
+.finale-bridge span{display:block;transform-origin:left center}
+.is-animated .contact{position:absolute;inset:0;border:0;padding:0}
+.is-animated .contact-heading{position:absolute;left:var(--gutter);top:16%;width:75%}
+.is-animated .contact-note{position:absolute;left:62%;right:var(--gutter);top:38%;margin:0;max-width:380px}
+.is-animated .contact-links{position:absolute;left:var(--gutter);right:var(--gutter);top:57%}
+.is-animated .contact-signature{position:absolute;left:var(--gutter);right:var(--gutter);bottom:12%;margin:0}
+.is-animated .contact-signature strong{font-size:clamp(44px,5.2vw,78px)}
+.is-animated .finale-footer{position:absolute;left:var(--gutter);right:var(--gutter);bottom:0;height:64px}
+.is-animated .finale-anchor{top:var(--finale-travel)}
+@media(min-width:761px) and (max-height:810px){
+.is-animated .next-heading{top:15%}.is-animated .next h2{font-size:5.5vw;margin:15px 0}.is-animated .direction{padding:13px 0 14px}.is-animated .direction h3{font-size:22px;margin-bottom:8px}.is-animated .direction-status{margin-bottom:8px}.is-animated .direction p{font-size:12px}.is-animated .contact-heading{top:15%}.is-animated .contact-heading h2{font-size:6vw;margin-top:18px}.is-animated .contact-signature{bottom:12%}.is-animated .contact-signature strong{font-size:48px}
+}
+@media(min-width:761px) and (max-width:1000px){
+.finale{--finale-travel:1500px}.is-animated .next-heading{top:13%;width:75%}.is-animated .next h2{font-size:68px}.is-animated .next-directions{left:40%;top:44%}.is-animated .direction h3{font-size:22px}.is-animated .direction p{font-size:12px}.is-animated .next-figure-label{bottom:13%;max-width:170px}.is-animated .contact-heading{top:17%}.is-animated .contact-note{top:40%;left:var(--gutter)}.is-animated .contact-links{top:55%}.is-animated .contact-signature{bottom:14%}
+}
+@media(max-width:760px){
+.finale{--finale-travel:1300px}
+.finale-meta{font-size:8px;min-height:49px;padding:17px 0}.finale-meta>span:last-child{display:none}
+.next{display:block;min-height:0;padding:40px 0 45px}
+.next h2{font-size:48px;margin:18px 0}.next-heading>.eyebrow{font-size:10px}.next-heading>p{font-size:12px;max-width:290px;line-height:1.9}
+.next-directions{margin-top:50px}.direction{grid-template-columns:26px 1fr;gap:12px;padding:18px 0 20px}.direction h3{font-size:21px;margin-bottom:9px}.direction-status{font-size:10px;margin-bottom:10px}.direction p{font-size:12px;line-height:1.8}.direction-number{font-size:11px}
+.next-figure-label{display:none}.learning-record summary{font-size:10px;min-height:45px}.learning-record>p{font-size:11px}
+.contact{padding:40px 0}.contact-heading h2{font-size:43px;margin-top:23px}.contact-note{font-size:12px;margin:25px 0 40px;max-width:310px}.contact-mail{display:block;padding:18px 0 8px}.contact-mail>a{font-size:clamp(25px,7.3vw,34px);letter-spacing:-.055em;gap:18px;min-height:44px}.contact-mail button{padding:0;font-size:10px;margin-top:4px}.contact-github{font-size:12px;max-width:none}.contact-signature{display:block;margin-top:52px}.contact-signature strong{font-size:60px}.contact-signature strong>span{font-size:8px}.contact-signature p{font-size:10px;margin-top:23px}
+.finale-footer{font-size:8px;gap:12px;min-height:59px}.finale-footer nav{gap:16px}.finale-anchor{top:calc(100% - 650px)}
+.is-animated .next-heading{left:var(--gutter);right:var(--gutter);top:13%;width:auto}.is-animated .next h2{font-size:48px;margin:18px 0}.is-animated .next-directions{left:var(--gutter);right:var(--gutter);top:30%;margin:0}.is-animated .direction{padding:16px 0 17px}.is-animated .direction h3{font-size:21px}.is-animated .direction p{font-size:12px}.is-animated .next-figure-label{display:block;bottom:14%;font-size:10px;max-width:240px}.is-animated .next-figure-label i{font-size:22px}
+.is-animated .finale-bridge{font-size:clamp(34px,10.2vw,62px);top:29%;right:var(--gutter)}
+.is-animated .contact-heading{top:15%;width:auto;right:var(--gutter)}.is-animated .contact-heading h2{font-size:clamp(38px,10.7vw,65px);margin-top:23px}.is-animated .contact-note{left:var(--gutter);right:var(--gutter);top:37%;font-size:12px;max-width:310px}.is-animated .contact-links{top:51%}.is-animated .contact-signature{bottom:12%;display:flex;align-items:end;gap:10px}.is-animated .contact-signature strong{font-size:42px}.is-animated .contact-signature strong>span{font-size:6px;letter-spacing:.04em;margin-top:10px}.is-animated .contact-signature p{font-size:8px;max-width:155px;margin:0}.is-animated .finale-footer{height:59px}
+}
+@media(max-width:380px){.is-animated .direction{padding:12px 0 14px}.is-animated .direction h3{font-size:19px}.is-animated .direction p{font-size:11px}.is-animated .contact-signature p{max-width:130px}.is-animated .contact-mail>a{gap:12px}}
+
+/* Review 01 — reserve the reading zones before connecting the timeline. */
+@media(min-width:1001px){.is-animated .next-figure-label{top:56%;bottom:auto}.is-animated .finale-bridge{top:27%}.is-animated .contact-links{top:53%}.is-animated .contact-mail{padding:12px 0}.is-animated .contact-mail>a{font-size:clamp(26px,4.3vw,64px)}.is-animated .contact-signature{bottom:10%}.is-animated .contact-signature strong{font-size:48px}}
+@media(max-width:760px){.is-animated .next-figure-label{bottom:10%}}
+
+.contact-static-mark{position:absolute;right:0;top:70px;width:130px;fill:var(--blue)}.contact-static-mark path:nth-child(2){fill:#1e31ac}.contact-static-mark path:nth-child(4){fill:#4255dc}.contact-static-mark path:last-child{fill:var(--red)}.is-animated .contact-static-mark{display:none}
+@media(max-width:760px){.contact-static-mark{top:31px;width:52px}}
+@media(min-width:761px) and (max-width:1000px){.is-animated .next h2{font-size:64px}.is-animated .next-directions{top:42%}.is-animated .direction{padding:17px 0 19px}.is-animated .next-figure-label{bottom:9%;max-width:260px}}

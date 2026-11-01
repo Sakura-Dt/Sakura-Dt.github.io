@@ -17,7 +17,7 @@ def build(source):
     parser=VisibleText()
     for page in ROOT.glob('*.html'): parser.feed(page.read_text())
     # Include feedback strings and ASCII so later English edits never require a rebuild.
-    text=''.join(parser.parts)+(ROOT/'assets/js/main.js').read_text()
+    text=''.join(parser.parts)+(ROOT/'assets/js/main.js').read_text()+(ROOT/'content/site.json').read_text()
     chars={ord(c) for c in text if ord(c)>=0x2e80}
     latin=set(range(0x20,0x100))|{0x2190,0x2191,0x2192,0x2193,0x2197,0x2198,0x21b3,0x2212,0x2013,0x2014,0x2018,0x2019,0x201c,0x201d,0x2022,0x2026,0x2715}
     for name,axes,unicodes in [('Archivo',{'wdth':(75,100),'wght':(400,700)},latin),('NotoSansSC',{'wght':(400,700)},chars)]:

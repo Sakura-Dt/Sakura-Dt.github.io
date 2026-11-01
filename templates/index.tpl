@@ -1,172 +1,132 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f1eee6"><meta name="description" content="{{meta_description}}"><title>{{meta_title}}</title><link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="./assets/fonts/Archivo-subset.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="./assets/fonts/NotoSansSC-subset.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="./assets/css/style.css"><link rel="stylesheet" href="./assets/css/home.css"><script src="./assets/js/main.js" defer></script>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f1eee6"><meta name="description" content="{{meta_description}}"><title>{{meta_title}}</title><link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="preload" href="./assets/fonts/Archivo-subset.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="./assets/fonts/NotoSansSC-subset.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="./assets/css/style.css"><link rel="stylesheet" href="./assets/css/home.css"><link rel="stylesheet" href="./assets/css/intro.css"><link rel="stylesheet" href="./assets/css/order.css"><link rel="stylesheet" href="./assets/css/dimensions.css"><link rel="stylesheet" href="./assets/css/finale.css"><link rel="stylesheet" href="./assets/css/type.css"><script src="./assets/js/copy.js" defer></script><link rel="stylesheet" href="./assets/css/integration.css"><script src="./assets/js/motion.js" defer></script><script src="./assets/js/main.js" defer></script><script src="./assets/js/intro.js" defer></script><script src="./assets/js/order.js" defer></script><script src="./assets/js/dimensions.js" defer></script><script src="./assets/js/finale.js" defer></script>
 </head>
-<body><a class="skip-link" href="#main">跳到主要内容</a>
-<header class="header"><a class="brand" href="./index.html"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M3 10 22 3 41 10 22 41Z" fill="currentColor"/><path d="m3 10 19 9 19-9M22 19v22" fill="none" stroke="var(--paper)" stroke-width="1.7"/></svg><span>SAKURA<span class="brand-sub">折向 / PERSONAL PRACTICE</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">目录 <span aria-hidden="true">＋</span></button>
-<nav id="navigation" aria-label="主导航"><a href="#about">01 / 本人</a><a href="#projects">02 / 作品</a><a href="#contact">03 / 联系 <span aria-hidden="true">↗</span></a>
-</nav><span class="header-note">FORM IN THE MAKING</span>
+<body><a class="skip-link" href="#main">{{home.skip_link_a}}</a>
+<header class="header"><a class="brand" href="./index.html"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M3 10 22 3 41 10 22 41Z" fill="currentColor"/><path d="m3 10 19 9 19-9M22 19v22" fill="none" stroke="var(--paper)" stroke-width="1.7"/></svg><span>{{shared.brand_span}}<span class="brand-sub">{{shared.brand_sub_span}}</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">{{shared.menu_toggle_button}} <span aria-hidden="true">＋</span></button>
+<nav id="navigation" aria-label="{{shared.navigation_nav_aria_label}}"><a href="#about">{{shared.navigation_a}}</a><a href="#projects">{{shared.navigation_a_2}}</a><a href="#next">{{shared.navigation_a_3}}</a><a href="#contact">{{shared.navigation_a_4}} <span aria-hidden="true">↗</span></a>
+</nav><span class="header-note">{{shared.header_note_span}}</span>
 </header>
 <main id="main">
-<section class="scene opening" id="top" data-scene="opening" aria-labelledby="opening-title">
-<div class="stage opening-stage">
-<div class="scene-meta"><span>SAKURA / SELECTED PRACTICE</span><span>软件开发 · 后端学习 · AI AGENT 应用探索</span><span>个人作品集 / 2026</span>
+<section class="intro" id="top" aria-label="{{home.top_section_aria_label}}">
+<div class="intro-stage">
+<svg class="identity-sheet" viewBox="0 0 1440 822" preserveAspectRatio="none" aria-hidden="true">
+<path class="identity-face" d="M1000 400 760 245 1040 135Z"/><path class="identity-face" d="M1000 400 1210 295 1230 515Z"/><path class="identity-face" d="M1000 400 1230 515 1000 655Z"/><path class="identity-face" d="M1000 400 1000 655 800 540Z"/><path class="identity-face" d="M1000 400 800 540 760 245Z"/><path class="identity-face identity-accent" d="M1000 400 1040 135 1210 295Z"/>
+<defs><clipPath id="intro-sheet-clip" clipPathUnits="userSpaceOnUse"><path/><path/><path/><path/><path/><path/></clippath></defs>
+<g class="identity-creases"><path/><path/><path/><path/><path/><path/></g>
+<circle class="identity-hinge" r="4" cx="1000" cy="400"/>
+</svg>
+<div class="intro-meta"><span>{{opening.intro_meta_span}}</span><span class="intro-meta-right">{{opening.intro_meta_right_span}}<b>2026</b></span></div>
+<div class="hero-copy">
+<p class="hero-greeting">{{opening.hero_greeting_p}}</p>
+<h1 id="opening-title"><span>{{opening.opening_title_span}}</span><span>{{opening.opening_title_span_2}}<span class="hero-stop">。</span></span></h1>
 </div>
-<div class="opening-type" aria-hidden="true"><span class="type-form">FORM</span><span class="type-middle">IN THE</span><span class="type-making">MAKING<span class="type-period">.</span></span>
-</div>
-<div class="opening-art"><svg class="fold-sculpture" viewBox="0 0 800 800" aria-hidden="true"><g class="fold-orbit"><circle cx="400" cy="400" r="340"/><ellipse cx="400" cy="400" rx="340" ry="110" transform="rotate(-38 400 400)"/></g><g class="fold-blades"><path class="blade blade-a" d="M400 402 80 170 624 70Z"/><path class="blade blade-b" d="M400 402 624 70 714 235Z"/><path class="blade blade-c" d="M400 402 714 235 750 560Z"/><path class="blade blade-d" d="M400 402 750 560 448 740Z"/><path class="blade blade-e" d="M400 402 448 740 160 662Z"/><path class="blade blade-f" d="M400 402 160 662 80 170Z"/><path class="fold-seams" d="M80 170 400 402 624 70M714 235 400 402 750 560M448 740 400 402 160 662"/></g><circle class="fold-core" cx="400" cy="402" r="10"/></svg>
-</div>
-<div class="opening-copy"><span class="eyebrow">折向 / A STUDY IN MAKING</span><h1 id="opening-title">{{hero_title}}</h1><p>{{hero_body}}</p><a class="text-link" href="#projects">展开两件作品 <span aria-hidden="true">↘</span></a>
-</div>
-<div class="opening-bottom"><span>{{school}}</span><span class="scroll-hint"><span aria-hidden="true">↓</span> 向下展开 / SCROLL TO UNFOLD</span><button class="motion-toggle" aria-pressed="false">减少动效</button>
-</div>
-<div class="fold-transition" aria-hidden="true">
-</div>
-</div>
+<div class="hero-info"><p>{{school}}</p><p>{{opening.hero_info_p}}</p><a class="intro-work-link" href="#projects">{{opening.intro_work_link_a}} <span aria-hidden="true">↗</span></a></div>
+<div class="intro-wordmark" aria-hidden="true"><span><b>{{opening.intro_wordmark_b}}</b></span><span><b>{{opening.intro_wordmark_b_2}}</b></span><span><b>{{opening.intro_wordmark_b_3}}</b></span></div>
+<div class="fold-coordinate" aria-hidden="true"><span>{{opening.fold_coordinate_span}}</span><span class="fold-coordinate-line"></span><span>{{opening.fold_coordinate_span_2}}</span></div>
+<div class="unfold-heading" aria-hidden="true"><span>{{opening.unfold_heading_span}}</span><span>{{opening.unfold_heading_span_2}}</span><small>{{opening.unfold_heading_small}}</small></div>
+<div class="unfold-light-mask" aria-hidden="true"><div class="unfold-heading" ><span>{{opening.unfold_heading_span}}</span><span>{{opening.unfold_heading_span_2}}</span><small>{{opening.unfold_heading_small}}</small></div></div>
+<section class="profile-composition" aria-labelledby="about-title">
+<div class="profile-identity"><span class="profile-kicker">{{profile.profile_kicker_span}}</span><h2 id="about-title">{{profile.about_title_h2}} <span>{{profile.about_title_span}}</span></h2><p>{{school}}<br><span>{{profile.profile_identity_span}}</span></p></div>
+<div class="profile-index" aria-hidden="true">01<span>{{profile.profile_index_span}}</span></div>
+<div class="profile-material profile-region"><span class="profile-kicker">{{profile.profile_kicker_span_2}}</span><h3>{{profile.profile_material_h3}}</h3><p class="profile-tech">{{profile.profile_tech_p}}</p><p>{{profile.profile_material_p}}<br>{{profile.profile_material_p_2}}</p></div>
+<div class="profile-direction profile-region"><span class="profile-kicker">{{profile.profile_kicker_span_3}}</span><h3>{{profile.profile_direction_h3}}</h3><p>{{profile.profile_direction_p}}</p><p class="profile-footnote">{{profile.profile_footnote_p}}</p></div>
+<div class="profile-question profile-region"><span class="profile-kicker">{{profile.profile_kicker_span_4}}</span><h3>{{profile.profile_question_h3}}</h3><p>{{profile.profile_question_p}}</p><a class="intro-work-link" href="{{github}}" target="_blank" rel="noopener noreferrer">{{profile.intro_work_link_a}} <span aria-hidden="true">↗</span></a></div>
 </section>
-<section class="scene about" id="about" data-scene="about" aria-labelledby="about-title">
-<div class="stage about-stage">
-<div class="section-top"><span>01 / THE STARTING MATERIAL</span><span>本人 · 基础与方向</span>
+<div class="intro-footer"><span class="intro-foot-label" data-short-label="{{shared.case_footer_a}}">{{opening.intro_foot_label_span}}</span><span class="intro-scroll-label">{{opening.intro_scroll_label_span}} <span aria-hidden="true">↓</span></span><button class="motion-toggle" aria-pressed="false">{{opening.motion_toggle_button}}</button></div>
 </div>
-<div class="about-layout">
-<div class="about-heading"><span class="eyebrow">每一折，都需要支点。</span><h2 id="about-title">{{about_title}}</h2><p>{{about_body}}</p><a class="text-link" href="{{github}}" target="_blank" rel="noopener noreferrer">在 GitHub 看实践 <span aria-hidden="true">↗</span></a>
-</div>
-<div class="material-art" aria-hidden="true">
-<div class="material-word">RAW<br><i>TO</i><br>REAL.</div><svg viewBox="0 0 600 600" class="crease-map"><path class="crease-sheet" d="M50 125 420 35 555 465 175 565Z"/><path class="crease-inner" d="m50 125 325 160 45-250M375 285l180 180M375 285 175 565"/><path class="crease-highlight" d="M50 125 375 285 175 565Z"/></svg><span class="material-caption">语言是材料。<br>结构在实践中形成。</span>
-</div>
-</div>
-<div class="skill-ledger">
-<div><span>01 / 已有基础</span><strong>C / C++ / Python</strong><p>语言练习、数据组织与文件处理</p>
-</div>
-<div><span>02 / 正在学习</span><strong>Software Engineering</strong><p>需求、实现、验证与版本管理</p>
-</div>
-<div><span>03 / 关注方向</span><strong>Backend / AI Agent</strong><p>尚无已完成作品，从小规模实践开始</p>
-</div>
-</div>
-</div>
+<span id="about" class="intro-anchor" aria-hidden="true"></span>
 </section>
+<div class="chapter-seam seam-profile" aria-hidden="true"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0 0H1440V8L518 100L0 38Z"/><path d="M518 100H1354"/></svg></div>
 <section id="projects" class="work-index" aria-labelledby="index-title">
-<div><span class="eyebrow">02 / WORK, WITH EVIDENCE</span><h2 id="index-title">两件作品。<span>从形状，读到做法。</span></h2>
+<div><span class="eyebrow">{{work_index.eyebrow_span}}</span><h2 id="index-title">{{work_index.index_title_h2}}<span>{{work_index.index_title_span}}</span></h2>
 </div>
 <div class="work-tools">
-<div class="filters" role="group" aria-label="按技术筛选作品"><button data-filter="all" aria-pressed="true">全部 / 02</button><button data-filter="web" aria-pressed="false">Web / 01</button><button data-filter="python" aria-pressed="false">Python / 01</button>
-</div><p id="filter-status" role="status" class="sr-only">已显示 2 个项目</p><a href="#next" class="small-link">另有一项计划 ↗</a>
+<div class="filters" role="group" aria-label="{{work_index.filters_div_aria_label}}"><button data-filter="all" aria-pressed="true">{{work_index.filters_button}}</button><button data-filter="web" aria-pressed="false">{{work_index.filters_button_2}}</button><button data-filter="python" aria-pressed="false">{{work_index.filters_button_3}}</button>
+</div><p id="filter-status" role="status" class="sr-only">{{work_index.filter_status_p}}</p><a href="#next" class="small-link">{{work_index.small_link_a}}</a>
 </div>
 </section>
-<article class="scene web-work project" id="web" data-category="web" data-scene="web" aria-labelledby="web-title">
-<div class="stage web-stage">
-<div class="section-top"><span>WORK 01 / PERSONAL WEBSITE</span><span>HTML · CSS · JAVASCRIPT</span>
+<article class="project order-scene" id="python" data-category="python" aria-labelledby="python-title">
+<div class="order-pin"><div class="order-stage">
+<div class="order-paper" aria-hidden="true"></div>
+<header class="order-meta"><h2 id="python-title">{{python_scene.python_title_h2}}</h2><span>{{python_scene.order_meta_span}}</span><span>{{python_scene.order_meta_span_2}}</span></header>
+<div class="order-headings" aria-hidden="true"><div data-order-title="0">{{python_scene.order_headings_div}}<br>{{python_scene.order_headings_div_2}}</div><div data-order-title="1">{{python_scene.order_headings_div_3}}</div><div data-order-title="2">{{python_scene.order_headings_div_4}}</div><div data-order-title="3">{{python_scene.order_headings_div_5}}</div><div data-order-title="4">{{python_scene.order_headings_div_6}}</div></div>
+<div class="order-opening-note"><strong>13<span>{{python_scene.order_opening_note_span}}</span></strong><p>{{python_scene.order_opening_note_p}}<br>{{python_scene.order_opening_note_p_2}}</p></div>
+<div class="order-rule-note"><b>{{python_scene.order_rule_note_b}}</b><p>{{python_scene.order_rule_note_p}}<br>{{python_scene.order_rule_note_p_2}}</p><span>{{python_scene.order_rule_note_span}}</span></div>
+<div class="order-plan-note"><span>{{python_scene.order_plan_note_span}}</span><strong>12 <small>{{python_scene.order_plan_note_small}}</small> / 01 <small>{{python_scene.order_plan_note_small_2}}</small></strong><p>{{python_scene.order_plan_note_p}}</p></div>
+<div class="order-groups">
+<div class="order-group" data-group="0"><div class="order-group-plane" aria-hidden="true"></div><div class="order-group-label"><span>{{python_scene.order_group_label_span}}</span><h3>{{python_scene.order_group_label_h3}}</h3><p class="order-rule">{{python_scene.order_rule_p}}</p><p class="order-group-count"><span>{{python_scene.order_group_count_span}}</span><b>{{python_scene.order_group_count_b}}</b></p></div></div>
+<div class="order-group" data-group="1"><div class="order-group-plane" aria-hidden="true"></div><div class="order-group-label"><span>{{python_scene.order_group_label_span_2}}</span><h3>{{python_scene.order_group_label_h3_2}}</h3><p class="order-rule">{{python_scene.order_rule_p_2}}</p><p class="order-group-count"><span>{{python_scene.order_group_count_span_2}}</span><b>{{python_scene.order_group_count_b_2}}</b></p></div></div>
+<div class="order-group" data-group="2"><div class="order-group-plane" aria-hidden="true"></div><div class="order-group-label"><span>{{python_scene.order_group_label_span_3}}</span><h3>{{python_scene.order_group_label_h3_3}}</h3><p class="order-rule">{{python_scene.order_rule_p_3}}</p><p class="order-group-count"><span>{{python_scene.order_group_count_span_3}}</span><b>{{python_scene.order_group_count_b_3}}</b></p></div></div>
+<div class="order-group" data-group="3"><div class="order-group-plane" aria-hidden="true"></div><div class="order-group-label"><span>{{python_scene.order_group_label_span_4}}</span><h3>{{python_scene.order_group_label_h3_4}}</h3><p class="order-rule">{{python_scene.order_rule_p_4}}</p><p class="order-group-count"><span>{{python_scene.order_group_count_span_3}}</span><b>{{python_scene.order_group_count_b_3}}</b></p></div></div>
+<div class="order-group" data-group="4"><div class="order-group-plane" aria-hidden="true"></div><div class="order-group-label"><span>{{python_scene.order_group_label_span_5}}</span><h3>{{python_scene.order_group_label_h3_5}}</h3><p class="order-rule">{{python_scene.order_rule_p_5}}</p><p class="order-group-count"><span>{{python_scene.order_group_count_span_3}}</span><b>{{python_scene.order_group_count_b_3}}</b></p></div></div>
 </div>
-<div class="web-layout">
-<div class="project-copy"><span class="project-number">01<span>/ WEB</span></span><h2 id="web-title">{{web_title}}</h2><p>{{web_body}}</p>
-<dl class="project-facts">
-<div><dt>状态</dt><dd>持续维护 · GitHub Pages</dd>
+<div class="order-files" aria-label="{{python_scene.order_files_div_aria_label}}">
+<div class="order-piece kind-document order-skipped" data-file="notes.txt" data-group="0" data-action="skip"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong}}</strong><small>{{python_scene.piece_info_small}}</small></div><span class="piece-status" aria-hidden="true">{{python_scene.piece_status_span}}</span></div>
+<div class="order-piece kind-document" data-file="brief.pdf" data-group="0" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_2}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_2}}</strong><small>{{python_scene.piece_info_small_2}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-document" data-file="table.csv" data-group="0" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_3}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_3}}</strong><small>{{python_scene.piece_info_small_3}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-document" data-file="readme.md" data-group="0" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_4}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_4}}</strong><small>{{python_scene.piece_info_small_4}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-image" data-file="cover.png" data-group="1" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_5}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_5}}</strong><small>{{python_scene.piece_info_small_5}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-image" data-file="photo.JPG" data-group="1" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_6}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_6}}</strong><small>{{python_scene.piece_info_small_6}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-image" data-file="mark.svg" data-group="1" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_7}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_7}}</strong><small>{{python_scene.piece_info_small_7}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-archive" data-file="release.zip" data-group="2" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_8}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_8}}</strong><small>{{python_scene.piece_info_small_8}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-archive" data-file="backup.7z" data-group="2" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_9}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_9}}</strong><small>{{python_scene.piece_info_small_9}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-media" data-file="theme.mp3" data-group="3" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_10}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_10}}</strong><small>{{python_scene.piece_info_small_10}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-media" data-file="demo.mp4" data-group="3" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_11}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_11}}</strong><small>{{python_scene.piece_info_small_11}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-other" data-file="data.bin" data-group="4" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_12}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_12}}</strong><small>{{python_scene.piece_info_small_12}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
+<div class="order-piece kind-other" data-file="script.py" data-group="4" data-action="move"><div class="piece-art" aria-hidden="true"><span>{{python_scene.piece_art_span_13}}</span><i></i><i></i><i></i></div><div class="piece-info"><strong>{{python_scene.piece_info_strong_13}}</strong><small>{{python_scene.piece_info_small_13}}</small></div><span class="piece-status" aria-hidden="true">↳</span></div>
 </div>
-<div><dt>实现</dt><dd>原生前端 / 静态生成 / GitHub Pages</dd>
-</div>
-<div><dt>关键取舍</dt><dd>动效可退出，信息始终可读</dd>
-</div>
-</dl><a class="solid-link" href="./portfolio.html">读设计与工程记录 <span aria-hidden="true">↗</span></a><a class="small-link" href="https://github.com/Sakura-Dt/Sakura-Dt.github.io" target="_blank" rel="noopener noreferrer">GitHub 源码 ↗</a>
-</div>
-<div class="web-performance" aria-hidden="true"><span class="cover-word">REFRAME</span>
-<div class="browser-model">
-<div class="browser-bar"><i></i><i></i><i></i><span>SAKURA / FORM IN THE MAKING</span>
-</div>
-<div class="model-content"><span class="model-nav">SAKURA <b>01 / 02 / 03</b></span><strong>FORM<br><em>IN THE</em><br>MAKING.</strong>
-<div class="model-fold">
-</div><span class="model-label">把问题，<br>折成形。</span>
-<div class="model-bottom">ONE CONTENT. MANY SCALES. <span>↘</span>
-</div>
-</div>
-</div>
-<div class="viewport-rule"><span>同一内容</span><span class="viewport-label">DESKTOP → MOBILE</span><span>不同尺度</span>
-</div><span class="web-caption">版式转换示意 / 非浏览器截图</span>
-</div>
-</div>
-<div class="project-bottom"><span>01 — 需求与内容</span><span>02 — 响应式与交互</span><span>03 — 检查与修订</span>
-</div>
-</div>
+<div class="order-preview-caption">{{python_scene.order_preview_caption_div}}<span>{{python_scene.order_preview_caption_span}}</span></div>
+<div class="order-confirmation"><span>{{python_scene.order_confirmation_span}}</span><button data-order-confirm aria-label="{{python_scene.order_confirmation_button_aria_label}}">{{python_scene.order_confirmation_button}} <b aria-hidden="true">↗</b></button><small>{{python_scene.order_confirmation_small}}</small></div>
+<div class="order-existing"><span>{{python_scene.piece_info_strong}}</span><small>{{python_scene.order_existing_small}}</small></div>
+<div class="order-result-summary"><strong>12 <small>{{python_scene.order_result_summary_small}}</small></strong><span>{{python_scene.order_result_summary_span}}</span></div>
+<div class="order-root-caption">{{python_scene.order_root_caption_div}}</div>
+<div class="order-log"><span>{{python_scene.order_log_span}}</span><strong>{{python_scene.order_log_strong}}</strong><p>{{python_scene.order_log_p}}<br>{{python_scene.order_log_p_2}}</p></div>
+<footer class="order-footer"><span class="order-disclaimer">{{python_scene.order_disclaimer_span}}</span><nav class="order-controls" aria-label="{{python_scene.order_controls_nav_aria_label}}"><button data-order-step="0" aria-pressed="true">{{python_scene.order_controls_button}} <span>{{python_scene.order_controls_span}}</span></button><button data-order-step="1" aria-pressed="false">{{python_scene.order_controls_button_2}} <span>{{python_scene.order_controls_span_2}}</span></button><button data-order-step="2" aria-pressed="false">{{python_scene.order_controls_button_3}} <span>{{python_scene.order_controls_span_3}}</span></button><button data-order-step="3" aria-pressed="false">{{python_scene.order_controls_button_4}} <span>{{python_scene.order_controls_span_4}}</span></button><button data-order-step="4" aria-pressed="false">{{python_scene.order_controls_button_5}} <span>{{python_scene.order_controls_span_5}}</span></button></nav></footer>
+<span class="order-state sr-only" aria-live="off">{{python_scene.order_state_span}}</span>
+</div></div>
+<div class="order-details"><p><b>{{python_scene.order_details_b}}</b> {{python_scene.order_details_p}}</p><a class="text-link" href="./organizer.html">{{python_scene.text_link_a}}</a><a class="small-link" href="./tools/file_organizer.py" download>{{python_scene.small_link_a}}</a></div>
 </article>
-<article class="scene python-work project" id="python" data-category="python" data-scene="python" aria-labelledby="python-title">
-<div class="stage python-stage">
-<div class="section-top"><span>WORK 02 / FILE ORGANIZER</span><span>PYTHON · PATHLIB · CLI</span>
-</div>
-<div class="python-heading"><span class="project-number">02<span>/ PYTHON</span></span><h2 id="python-title">{{python_title}}</h2>
-<div><p>{{python_body}}</p><a class="text-link" href="./organizer.html">查看实现与使用边界 <span aria-hidden="true">↗</span></a>
-</div>
-</div>
-<div class="file-theatre">
-<div class="theatre-head"><span>过程示意 / 不读取或操作你的文件</span><span class="flow-state" aria-live="off">01 / PREVIEW</span>
-</div>
-<div class="file-source"><span class="eyebrow">SOURCE / 第一层普通文件</span>
-<div class="file-sheet sheet-one"><span>TXT</span><strong>notes.txt</strong><small>→ documents/</small>
-</div>
-<div class="file-sheet sheet-two"><span>PNG</span><strong>image.png</strong><small>→ images/</small>
-</div>
-<div class="file-sheet sheet-three"><span>ZIP</span><strong>source.zip</strong><small>→ archives/</small>
-</div>
-</div><svg class="flow-path" viewBox="0 0 1000 230" preserveAspectRatio="none" aria-hidden="true"><path d="M40 115H380Q500 115 500 60T680 60H960M500 115H960M500 115Q500 175 680 175H960"/></svg>
-<div class="file-target"><span class="eyebrow">DESTINATION / 分类去向</span>
-<div><b>documents/</b><span>notes.txt</span>
-</div>
-<div><b>images/</b><span>image.png</span>
-</div>
-<div><b>archives/</b><span>source.zip</span>
-</div>
-</div>
-<div class="confirmation" aria-hidden="true"><span>确认后才执行</span><strong>MOVE ↗</strong>
-</div>
-</div>
-<div class="flow-controls" role="group" aria-label="查看文件整理流程"><button data-step="0" aria-pressed="true"><b>01</b> 列出去向 <span>PREVIEW</span></button><button data-step="1" aria-pressed="false"><b>02</b> 明确确认 <span>CONFIRM</span></button><button data-step="2" aria-pressed="false"><b>03</b> 移动留痕 <span>MOVE & LOG</span></button>
-</div>
-<div class="python-notes"><p><b>实现边界</b> 仅第一层文件；跳过隐藏项、子目录与符号链接。不覆盖已有目标；不递归、无自动撤销。</p><a class="small-link" href="./tools/file_organizer.py" download>下载 Python 源文件 ↓</a>
-</div>
-</div>
+<div class="chapter-seam seam-projects" aria-hidden="true"><svg viewBox="0 0 1440 160" preserveAspectRatio="none"><path d="M0 0H1440V160H0Z"/><path d="M0 0H1440L980 80L0 136Z"/><path d="M980 80H1354"/></svg></div>
+<article class="project dimension-scene" id="web" data-category="web" data-dimension aria-labelledby="web-title">
+<div class="dimension-pin"><div class="dimension-stage">
+<div class="dimension-field" aria-hidden="true"></div>
+<header class="dimension-meta"><h2 id="web-title">{{web_scene.web_title_h2}}</h2><span>{{web_scene.dimension_meta_span}}</span><span>{{web_scene.dimension_meta_span_2}}</span></header>
+<div class="dimension-titles" aria-hidden="true"><div>{{web_scene.dimension_titles_div}}</div><div>{{web_scene.dimension_titles_div_2}}</div><div>{{web_scene.dimension_titles_div_3}}</div></div>
+<div class="dimension-window"><iframe src="./assets/previews/site-view.html" title="{{web_scene.dimension_window_iframe_title}}" width="1440" height="900" tabindex="-1" aria-hidden="true" inert></iframe><noscript><img src="./assets/previews/desktop-source.jpg" alt="{{web_scene.dimension_window_img_alt}}"></noscript></div>
+<svg class="dimension-rules" aria-hidden="true"><path/></svg>
+<div class="dimension-measure"><strong>1440</strong><span>{{web_scene.dimension_measure_span}}</span></div>
+<div class="dimension-notes"><div><span>{{web_scene.dimension_notes_span}}</span><h3>{{web_scene.dimension_notes_h3}}</h3><p>{{web_scene.dimension_notes_p}}<br>{{web_scene.dimension_notes_p_2}}</p></div><div><span>{{web_scene.dimension_notes_span_2}}</span><h3>{{web_scene.dimension_notes_h3_2}}</h3><p>{{web_scene.dimension_notes_p_3}}<br>{{web_scene.dimension_notes_p_4}}</p></div><div><span>{{web_scene.dimension_notes_span_3}}</span><h3>{{web_scene.dimension_notes_h3_3}}</h3><p>{{web_scene.dimension_notes_p_5}}<br>{{web_scene.dimension_notes_p_6}}</p></div></div>
+<div class="dimension-caption"><span>{{web_scene.dimension_caption_span}}</span><strong>{{web_scene.dimension_caption_strong}}</strong></div>
+<footer class="dimension-footer"><span>{{web_scene.dimension_footer_span}}<i> {{web_scene.dimension_footer_i}}</i></span><nav aria-label="{{web_scene.dimension_footer_nav_aria_label}}"><button data-dimension-step="0" aria-pressed="true">{{web_scene.dimension_footer_button}} <span>{{web_scene.dimension_footer_span_2}}</span></button><button data-dimension-step="1" aria-pressed="false">{{web_scene.dimension_footer_button_2}} <span>{{web_scene.dimension_footer_span_3}}</span></button><button data-dimension-step="2" aria-pressed="false">{{web_scene.dimension_footer_button_3}} <span>{{web_scene.dimension_footer_span_4}}</span></button></nav></footer>
+</div></div>
+<div class="dimension-facts"><p><b>{{web_scene.dimension_facts_b}}</b> {{web_scene.dimension_facts_p}}</p><a class="text-link" href="./portfolio.html">{{web_scene.text_link_a}}</a><a class="small-link" href="https://github.com/Sakura-Dt/Sakura-Dt.github.io" target="_blank" rel="noopener noreferrer">{{web_scene.small_link_a}}</a></div>
 </article>
-<section class="next" id="next" aria-labelledby="next-title">
-<div class="section-top"><span>03 / THE UNFINISHED FOLD</span><span>实践记录 · 下一步</span>
+<section class="finale" id="next" aria-labelledby="next-title">
+<div class="finale-pin"><div class="finale-stage">
+<svg class="finale-sheet" viewBox="0 0 1440 822" preserveAspectRatio="none" aria-hidden="true"><g class="finale-faces"><path/><path/><path/><path/><path/><path/></g><g class="finale-seams"><path/><path/><path/></g><circle class="finale-point" r="4"/></svg>
+<div class="finale-meta"><span>{{ending.finale_meta_span}}</span><span>{{ending.finale_meta_span_2}}</span></div>
+<div class="next">
+<div class="next-heading"><span class="eyebrow">{{learning.eyebrow_span}}</span><h2 id="next-title">{{next_title}}</h2><p>{{next_body}}</p></div>
+<div class="next-directions">
+<div class="direction direction-foundation"><span class="direction-number">01</span><div><span class="direction-status">{{learning.direction_status_span}}</span><h3>{{learning.direction_h3}}</h3><p>{{learning.direction_p}}</p></div></div>
+<div class="direction direction-practice"><span class="direction-number">02</span><div><span class="direction-status">{{learning.direction_status_span_2}}</span><h3>{{learning.direction_h3_2}}</h3><p>{{learning.direction_p_2}}</p></div></div>
+<div class="direction direction-explore"><span class="direction-number">03</span><div><span class="direction-status">{{learning.direction_status_span_3}}</span><h3>{{learning.direction_h3_3}}</h3><p>{{learning.direction_p_3}}</p></div></div>
+<details class="learning-record"><summary>{{learning.learning_record_summary}}<span aria-hidden="true">＋</span></summary><p>{{learning.learning_record_p}}</p></details>
 </div>
-<div class="next-layout">
-<div><h2 id="next-title">{{next_title}}</h2><p>{{next_body}}</p>
-<div class="next-emblem" aria-hidden="true">↳<span>WORK<br>CONTINUES.</span>
+<span class="next-figure-label" aria-hidden="true">{{learning.next_figure_label_span}}<i>→</i></span>
 </div>
-</div>
-<div class="next-content">
-<div class="plan"><span class="eyebrow">计划中 / 尚未实现</span><h3>学生信息管理练习</h3><p>用 C++ 从添加与查询开始，再处理文件保存、重复学号、无效输入与空文件。目前没有可运行版本。</p><span class="plan-sequence">添加 → 查询 → 保存 → 验证</span>
-</div>
-<details class="learning-record"><summary>展开已发生的实践 <span aria-hidden="true">＋</span></summary>
-<ol>
-<li><time datetime="2026-10-26">10.26 / 2026</time>
-<div><h3>网页第一次成为入口。</h3><p>首版网站完成响应式布局与基础交互，通过 GitHub Pages 发布。</p>
-</div>
-</li>
-<li><time datetime="2026-10-27">10.27 / 2026</time>
-<div><h3>作品开始解释自己的做法。</h3><p>补充源码、项目详情和真实状态，继续检查手机阅读与操作。</p>
-</div>
-</li>
-<li><time datetime="2026-10-28">10.28 / 2026</time>
-<div><h3>文件移动，有了确认步骤。</h3><p>完成 Python 工具的预览、确认、分类移动与日志，并用临时目录测试。</p>
-</div>
-</li>
-</ol>
-</details>
-<div class="direction-note"><span>下一步 / Backend & AI Agent</span><p>先理解请求、数据与错误如何流动，再尝试边界清楚的应用。目前是学习方向，不计入已完成项目。</p>
-</div>
-</div>
-</div>
-</section>
+<div class="finale-bridge" aria-hidden="true"><span>{{ending.finale_bridge_span}}</span><span>{{ending.finale_bridge_span_2}}</span></div>
 <section class="contact" id="contact" aria-labelledby="contact-title">
-<div class="section-top"><span>04 / LEAVE A NEW CREASE</span><a href="#top">回到开场 ↑</a>
-</div>
-<div class="contact-layout"><h2 id="contact-title">{{contact_title}}</h2>
-<div class="contact-note"><p>{{contact_body}}</p><a class="text-link" href="{{github}}" target="_blank" rel="noopener noreferrer">GitHub / Sakura-Dt ↗</a>
-</div>
-</div>
-<div class="contact-mail"><a href="mailto:{{email}}">{{email}} <span aria-hidden="true">↗</span></a><button id="copy-email" data-email="{{email}}">复制邮箱 <span aria-hidden="true">⧉</span></button>
-</div><p id="copy-status" role="status"></p>
-<div class="closing-type" aria-hidden="true">KEEP <i>IN</i> FOLD.</div>
-<footer><span>© <span id="year">2026</span> SAKURA</span><span>折向 / FORM IN THE MAKING</span><span>以真实实践为材料。</span>
-</footer>
+<svg class="contact-static-mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 100 20 60 100 12Z"/><path d="M100 100 100 12 186 60Z"/><path d="M100 100 186 60 184 142Z"/><path d="M100 100 184 142 100 188Z"/><path d="M100 100 100 188 20 142Z"/><path d="M100 100 20 142 20 60Z"/></svg>
+<div class="contact-heading"><span class="eyebrow">{{contact.eyebrow_span}}</span><h2 id="contact-title">{{contact_title}}</h2></div>
+<p class="contact-note">{{contact_body}}</p>
+<div class="contact-links"><div class="contact-mail"><a href="mailto:{{email}}">{{email}}<span aria-hidden="true">↗</span></a><button id="copy-email" data-email="{{email}}">{{contact.copy_email_button}} <span aria-hidden="true">⧉</span></button></div><p id="copy-status" role="status"></p><a class="contact-github" href="{{github}}" target="_blank" rel="noopener noreferrer"><span>{{contact.contact_github_span}}</span><span aria-hidden="true">↗</span></a></div>
+<div class="contact-signature"><strong>{{contact.contact_signature_strong}}<span>{{contact.contact_signature_span}}</span></strong><p>{{school}}<br>{{contact.contact_signature_p}}</p></div>
+</section>
+<footer class="finale-footer"><span>© <span id="year">2026</span> {{ending.finale_footer_span}}</span><nav aria-label="{{ending.finale_footer_nav_aria_label}}"><a href="#next">{{ending.finale_footer_a}}</a><a href="#contact">{{ending.finale_footer_a_3}}</a><a href="#top">{{ending.finale_footer_a_4}}</a></nav></footer>
+</div></div>
+<span class="finale-anchor" aria-hidden="true"></span>
 </section>
 </main>
 <div class="reading-progress" aria-hidden="true"><span></span>
