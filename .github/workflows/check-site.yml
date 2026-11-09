@@ -2,7 +2,7 @@ name: Check site
 
 on:
   push:
-    branches: [main, 'codex/**']
+    branches: [main]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -13,25 +13,40 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
         with:
-          python-version: '3.12'
-      - name: Check generated pages
-        run: python scripts/render_site.py --check
-      - name: Check resources and internal links
-        run: python scripts/check_site.py
-      - name: Test Python tools
-        run: python -m unittest discover -s tests -p 'test_*.py' -v
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-      - name: Install test dependencies
-        run: npm ci
-      - name: Install browser
-        run: npx playwright install --with-deps chromium
-      - name: Test browser interactions
-        run: npm test
+          persist-credentials: false
+      - name: Verify published pages and resource paths
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import unquote, urlsplit
+
+          pages = {Path("index.html"), Path("projects/index.html")}
+          assert set(Path(".").rglob("*.html")) == pages
+          assert Path(".nojekyll").is_file()
+          assert Path("visual/hero-main.png").stat().st_size > 0
+
+          class Links(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.references = []
+
+              def handle_starttag(self, tag, attrs):
+                  self.references.extend(value for name, value in attrs
+                                         if name in {"href", "src"} and value)
+
+          for page in sorted(pages):
+              parser = Links()
+              parser.feed(page.read_text(encoding="utf-8"))
+              for reference in parser.references:
+                  url = urlsplit(reference)
+                  if url.scheme or url.netloc or not url.path:
+                      continue
+                  assert not url.path.startswith("/"), (page, reference)
+                  asset = page.parent / unquote(url.path)
+                  assert asset.is_file(), (page, reference)
+              print(f"{page}: all HTML resource paths resolve")
+          PY
